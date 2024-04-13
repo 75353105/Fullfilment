@@ -1,9 +1,12 @@
 package com.example.fullfilment_v3.asynctask;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.widget.Toast;
 
+import com.example.fullfilment_v3.appactivities.WelcomePageActivity;
 import com.example.fullfilment_v3.database.FullfilmentDBM;
 import com.example.fullfilment_v3.users.User;
 
@@ -33,7 +36,9 @@ public class VerifyUserAsyncTask extends AsyncTask<Void, Void, User> {
             Toast.makeText(mContext, "Username not found", Toast.LENGTH_LONG).show();
         } else {
             if (BCrypt.verifyer().verify(mPassword.toCharArray(), user.getPassword()).verified) {
-                Toast.makeText(mContext, "Login Successful", Toast.LENGTH_LONG).show();
+                Intent welcomeIntent = new Intent(mContext, WelcomePageActivity.class);
+                welcomeIntent.putExtra("USER", user);
+                mContext.startActivity(welcomeIntent);
             } else {
                 Toast.makeText(mContext, "The entered password is incorrect", Toast.LENGTH_LONG).show();
             }

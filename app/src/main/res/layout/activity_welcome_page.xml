@@ -1,0 +1,57 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<RelativeLayout xmlns:android = "http://schemas.android.com/apk/res/android"
+    xmlns:app = "http://schemas.android.com/apk/res-auto"
+    xmlns:tools = "http://schemas.android.com/tools"
+    android:layout_width = "match_parent"
+    android:layout_height = "match_parent"
+    android:background = "@drawable/fundal_welcome_gradient"
+    tools:context = ".appactivities.WelcomePageActivity">
+
+    <TextView
+        android:id = "@+id/txtWelcome"
+        android:layout_width = "wrap_content"
+        android:layout_height = "wrap_content"
+        android:text = "Welcome"
+        android:textSize = "60dp"
+        android:textColor = "@color/white"
+        android:layout_centerHorizontal = "true"
+        android:layout_marginTop = "130dp"
+        android:layout_marginBottom = "10dp"/>
+
+    <TextView
+        android:id = "@+id/txtStartMessage"
+        android:layout_width = "wrap_content"
+        android:layout_height = "wrap_content"
+        android:text = "Let's get started!"
+        android:textSize = "50dp"
+        android:textColor = "@color/white"
+        android:layout_centerHorizontal = "true"
+        android:layout_below = "@id/txtWelcome"
+        android:layout_marginTop = "10dp"
+        android:layout_marginBottom="10dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id = "@+id/btnStart"
+        android:layout_width = "wrap_content"
+        android:layout_height = "wrap_content"
+        android:layout_below = "@id/txtStartMessage"
+        android:backgroundTint = "@color/design_default_color_secondary_variant"
+        android:text = "Start"
+        android:textColor = "@color/white"
+        android:textSize = "25dp"
+        android:layout_marginTop = "150dp"
+        android:layout_marginLeft = "30dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id = "@+id/btnSignOut"
+        android:layout_width = "wrap_content"
+        android:layout_height = "wrap_content"
+        android:layout_below = "@id/txtStartMessage"
+        android:backgroundTint = "@color/design_default_color_secondary_variant"
+        android:text = "Sign Out"
+        android:textColor = "@color/white"
+        android:textSize = "25dp"
+        android:layout_marginTop = "150dp"
+        android:layout_marginLeft = "230dp"/>
+
+</RelativeLayout>
