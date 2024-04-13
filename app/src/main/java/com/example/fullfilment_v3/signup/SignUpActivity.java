@@ -2,13 +2,18 @@ package com.example.fullfilment_v3.signup;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.fullfilment_v3.R;
+import com.example.fullfilment_v3.users.User;
+import com.example.fullfilment_v3.users.UserBuilderDirector;
 import com.google.android.material.button.MaterialButton;
+
+import at.favre.lib.crypto.bcrypt.BCrypt;
 
 public class SignUpActivity extends AppCompatActivity {
 
@@ -21,12 +26,14 @@ public class SignUpActivity extends AppCompatActivity {
     EditText editTextConfirmPassword;
     MaterialButton btnSignUp;
     TextView txtViewWarning;
+    Intent intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
+        intent = getIntent();
         editTextUsername = findViewById(R.id.editTextUsername);
         editTextEmail = findViewById(R.id.editTextEmail);
         editTextFirstName = findViewById(R.id.editTextFirstName);
@@ -58,6 +65,15 @@ public class SignUpActivity extends AppCompatActivity {
                     txtViewWarning.setVisibility(View.VISIBLE);
                     return;
                 }
+                txtViewWarning.setVisibility(View.GONE);
+
+                String hashedPassword = BCrypt.withDefaults().hashToString(12, password.toCharArray());
+                UserBuilderDirector userBuilder = new UserBuilderDirector();
+                User newUser = userBuilder.create(username, email, firstName, lastName, hashedPassword);
+
+                intent.putExtra(ADD_USER, newUser);
+                setResult(RESULT_OK, intent);
+                finish();
             }
         });
     }
