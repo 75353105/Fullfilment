@@ -43,38 +43,35 @@ public class SignUpActivity extends AppCompatActivity {
         btnSignUp = findViewById(R.id.btnSignUp);
         txtViewWarning = findViewById(R.id.txtViewWarning);
 
-        btnSignUp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        btnSignUp.setOnClickListener(view -> {
 
-                String username = editTextUsername.getText().toString().trim();
-                String email = editTextEmail.getText().toString().trim();
-                String firstName = editTextFirstName.getText().toString().trim();
-                String lastName = editTextLastName.getText().toString().trim();
-                String password = editTextPassword.getText().toString().trim();
-                String confirmPassword = editTextConfirmPassword.getText().toString().trim();
+            String username = editTextUsername.getText().toString().trim();
+            String email = editTextEmail.getText().toString().trim();
+            String firstName = editTextFirstName.getText().toString().trim();
+            String lastName = editTextLastName.getText().toString().trim();
+            String password = editTextPassword.getText().toString().trim();
+            String confirmPassword = editTextConfirmPassword.getText().toString().trim();
 
-                if(username.isEmpty() || email.isEmpty() || firstName.isEmpty() || lastName.isEmpty() ||
-                        password.isEmpty() || confirmPassword.isEmpty()) {
-                    txtViewWarning.setText("All fields must be completed!");
-                    txtViewWarning.setVisibility(View.VISIBLE);
-                    return;
-                }
-                if(!password.equals(confirmPassword)) {
-                    txtViewWarning.setText("The given passwords do not match");
-                    txtViewWarning.setVisibility(View.VISIBLE);
-                    return;
-                }
-                txtViewWarning.setVisibility(View.GONE);
-
-                String hashedPassword = BCrypt.withDefaults().hashToString(12, password.toCharArray());
-                UserBuilderDirector userBuilder = new UserBuilderDirector();
-                User newUser = userBuilder.create(username, email, firstName, lastName, hashedPassword);
-
-                intent.putExtra(ADD_USER, newUser);
-                setResult(RESULT_OK, intent);
-                finish();
+            if(username.isEmpty() || email.isEmpty() || firstName.isEmpty() || lastName.isEmpty() ||
+                    password.isEmpty() || confirmPassword.isEmpty()) {
+                txtViewWarning.setText("All fields must be completed!");
+                txtViewWarning.setVisibility(View.VISIBLE);
+                return;
             }
+            if(!password.equals(confirmPassword)) {
+                txtViewWarning.setText("The given passwords do not match");
+                txtViewWarning.setVisibility(View.VISIBLE);
+                return;
+            }
+            txtViewWarning.setVisibility(View.GONE);
+
+            String hashedPassword = BCrypt.withDefaults().hashToString(12, password.toCharArray());
+            UserBuilderDirector userBuilder = new UserBuilderDirector();
+            User newUser = userBuilder.create(username, email, firstName, lastName, hashedPassword);
+
+            intent.putExtra(ADD_USER, newUser);
+            setResult(RESULT_OK, intent);
+            finish();
         });
     }
 }

@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -34,22 +33,16 @@ public class SignInActivity extends AppCompatActivity {
         signInButton = findViewById(R.id.btnSignIn);
         signUpButton = findViewById(R.id.btnSignUp);
 
-        signInButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String username = editTextUsername.getText().toString().trim();
-                String password = editTextPassword.getText().toString().trim();
+        signInButton.setOnClickListener(view -> {
+            String username = editTextUsername.getText().toString().trim();
+            String password = editTextPassword.getText().toString().trim();
 
-                new VerifyUserAsyncTask(SignInActivity.this, username, password).execute();
-            }
+            new VerifyUserAsyncTask(SignInActivity.this, username, password).execute();
         });
 
-        signUpButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                intent = new Intent(getApplicationContext(), SignUpActivity.class);
-                startActivityForResult(intent, SIGN_UP_REQUEST);
-            }
+        signUpButton.setOnClickListener(view -> {
+            intent = new Intent(getApplicationContext(), SignUpActivity.class);
+            startActivityForResult(intent, SIGN_UP_REQUEST);
         });
     }
 
