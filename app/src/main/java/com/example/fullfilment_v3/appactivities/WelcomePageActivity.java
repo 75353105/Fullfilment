@@ -23,7 +23,8 @@ public class WelcomePageActivity extends AppCompatActivity {
         btnStartApplication = findViewById(R.id.btnStart);
 
         btnStartApplication.setOnClickListener(view -> {
-
+            finish();
+            startActivity(new Intent(WelcomePageActivity.this, HomeDashboardActivity.class));
         });
 
         btnSignOut.setOnClickListener(view -> {
