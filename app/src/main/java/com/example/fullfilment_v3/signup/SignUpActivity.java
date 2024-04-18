@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -56,11 +57,13 @@ public class SignUpActivity extends AppCompatActivity {
                     password.isEmpty() || confirmPassword.isEmpty()) {
                 txtViewWarning.setText("All fields must be completed!");
                 txtViewWarning.setVisibility(View.VISIBLE);
+                Log.d("SignUpActivity", "Warning: All fields must be completed!");
                 return;
             }
             if(!password.equals(confirmPassword)) {
                 txtViewWarning.setText("The given passwords do not match");
                 txtViewWarning.setVisibility(View.VISIBLE);
+                Log.d("SignUpActivity", "Warning: Passwords do not match!");
                 return;
             }
             txtViewWarning.setVisibility(View.GONE);
