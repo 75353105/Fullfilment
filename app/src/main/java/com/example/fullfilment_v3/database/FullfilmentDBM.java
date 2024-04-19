@@ -8,7 +8,7 @@ import androidx.room.RoomDatabase;
 
 import com.example.fullfilment_v3.users.User;
 
-@Database(entities = {User.class}, version = 1, exportSchema = false)
+@Database(entities = {User.class}, version = 2, exportSchema = false)
 public abstract class FullfilmentDBM extends RoomDatabase {
 
     public static final String DB_NAME = "date.db";

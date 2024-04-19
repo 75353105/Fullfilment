@@ -16,7 +16,7 @@ public class User implements Serializable {
     public void setId(long id) {
         this.id = id;
     }
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     @ColumnInfo
     private long id;
 

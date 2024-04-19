@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.example.fullfilment_v3.R;
 import com.example.fullfilment_v3.asynctask.InsertUserAsyncTask;
+import com.example.fullfilment_v3.asynctask.ResetPasswordAsyncTask;
 import com.example.fullfilment_v3.asynctask.VerifyUserAsyncTask;
 import com.example.fullfilment_v3.signup.SignUpActivity;
 import com.example.fullfilment_v3.users.User;
@@ -67,7 +68,10 @@ public class SignInActivity extends AppCompatActivity {
         }
 
         if(requestCode == FORGOTTEN_PASSWORD_REQUEST && resultCode == RESULT_OK && data != null) {
-
+            String newPassword = data.getStringExtra(ForgottenPasswordActivity.CHANGE_PASSWORD);
+            if(newPassword != null && !newPassword.isEmpty()) {
+                new ResetPasswordAsyncTask(SignInActivity.this, editTextUsername.getText().toString().trim(), newPassword).execute();
+            }
         }
     }
 }

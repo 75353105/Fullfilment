@@ -2,12 +2,15 @@ package com.example.fullfilment_v3.signin;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.EditText;
 
 import com.example.fullfilment_v3.R;
 import com.google.android.material.button.MaterialButton;
+
+import at.favre.lib.crypto.bcrypt.BCrypt;
 
 public class ForgottenPasswordActivity extends AppCompatActivity {
 
@@ -69,6 +72,13 @@ public class ForgottenPasswordActivity extends AppCompatActivity {
                 editTextConfirmNewPassword.setHint("Confirm the new password");
                 editTextConfirmNewPassword.setHintTextColor(Color.WHITE);
             }
+
+            String newHashedPassword = BCrypt.withDefaults().hashToString(12, newPassword.toCharArray());
+
+            Intent intent = new Intent();
+            intent.putExtra(CHANGE_PASSWORD, newHashedPassword);
+            setResult(RESULT_OK);
+            finish();
         });
     }
 }
