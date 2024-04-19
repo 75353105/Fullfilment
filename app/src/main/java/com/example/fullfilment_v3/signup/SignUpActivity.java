@@ -3,11 +3,9 @@ package com.example.fullfilment_v3.signup;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import com.example.fullfilment_v3.R;
 import com.example.fullfilment_v3.users.User;
@@ -26,7 +24,6 @@ public class SignUpActivity extends AppCompatActivity {
     EditText editTextPassword;
     EditText editTextConfirmPassword;
     MaterialButton btnSignUp;
-    TextView txtViewWarning;
     Intent intent;
 
     @Override
@@ -42,7 +39,6 @@ public class SignUpActivity extends AppCompatActivity {
         editTextPassword = findViewById(R.id.editTextPassword);
         editTextConfirmPassword = findViewById(R.id.editTextConfirmPassword);
         btnSignUp = findViewById(R.id.btnSignUp);
-        txtViewWarning = findViewById(R.id.txtViewWarning);
 
         btnSignUp.setOnClickListener(view -> {
 
@@ -53,20 +49,65 @@ public class SignUpActivity extends AppCompatActivity {
             String password = editTextPassword.getText().toString().trim();
             String confirmPassword = editTextConfirmPassword.getText().toString().trim();
 
-            if(username.isEmpty() || email.isEmpty() || firstName.isEmpty() || lastName.isEmpty() ||
-                    password.isEmpty() || confirmPassword.isEmpty()) {
-                txtViewWarning.setText("All fields must be completed!");
-                txtViewWarning.setVisibility(View.VISIBLE);
-                Log.d("SignUpActivity", "Warning: All fields must be completed!");
-                return;
+            if(username.isEmpty()) {
+                editTextUsername.setHint("A username must be added!");
+                editTextUsername.setHintTextColor(Color.RED);
+            } else {
+                editTextUsername.setHint("Enter your username");
+                editTextUsername.setHintTextColor(Color.WHITE);
             }
+
+            if(email.isEmpty()) {
+                editTextEmail.setHint("An email adress is required!");
+                editTextEmail.setHintTextColor(Color.RED);
+            } else {
+                editTextEmail.setHint("Enter your email");
+                editTextEmail.setHintTextColor(Color.WHITE);
+            }
+
+            if(firstName.isEmpty()) {
+                editTextFirstName.setHint("We need to know your surname!");
+                editTextFirstName.setHintTextColor(Color.RED);
+            } else {
+                editTextFirstName.setHint("Enter your first name");
+                editTextFirstName.setHintTextColor(Color.WHITE);
+            }
+
+            if(lastName.isEmpty()) {
+                editTextLastName.setHint("We need to know your last name!");
+                editTextLastName.setHintTextColor(Color.RED);
+            } else {
+                editTextLastName.setHint("Enter your last name");
+                editTextLastName.setHintTextColor(Color.WHITE);
+            }
+
+            if(password.isEmpty()) {
+                editTextPassword.setHint("A password must be added!");
+                editTextPassword.setHintTextColor(Color.RED);
+            } else {
+                editTextPassword.setHint("Enter your password");
+                editTextPassword.setHintTextColor(Color.WHITE);
+            }
+
+            if(confirmPassword.isEmpty()) {
+                editTextConfirmPassword.setHint("The password must be confirmed!");
+                editTextConfirmPassword.setHintTextColor(Color.RED);
+            } else {
+                editTextConfirmPassword.setHint("Confirm your password");
+                editTextConfirmPassword.setHintTextColor(Color.WHITE);
+            }
+
             if(!password.equals(confirmPassword)) {
-                txtViewWarning.setText("The given passwords do not match");
-                txtViewWarning.setVisibility(View.VISIBLE);
-                Log.d("SignUpActivity", "Warning: Passwords do not match!");
-                return;
+                editTextConfirmPassword.setHint("The passwords do not match!");
+                editTextPassword.setHint("The passwords do not match!");
+                editTextConfirmPassword.setHintTextColor(Color.RED);
+                editTextPassword.setHintTextColor(Color.RED);
+            } else {
+                editTextConfirmPassword.setHint("Confirm your password");
+                editTextPassword.setHint("Enter your password");
+                editTextConfirmPassword.setHintTextColor(Color.WHITE);
+                editTextPassword.setHintTextColor(Color.WHITE);
             }
-            txtViewWarning.setVisibility(View.GONE);
 
             String hashedPassword = BCrypt.withDefaults().hashToString(12, password.toCharArray());
             UserBuilderDirector userBuilder = new UserBuilderDirector();

@@ -131,14 +131,5 @@
         android:layout_marginTop = "25dp"
         android:layout_marginLeft = "130dp"/>
 
-    <TextView
-        android:id="@+id/txtViewWarning"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        android:layout_below="@id/editTextConfirmPassword"
-        android:layout_above="@id/btnSignUp"
-        android:textColor="#FF0000"
-        android:layout_margin="10dp"/>
 
 </RelativeLayout>
