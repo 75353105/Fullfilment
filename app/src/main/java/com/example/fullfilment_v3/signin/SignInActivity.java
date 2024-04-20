@@ -19,7 +19,6 @@ import com.example.fullfilment_v3.users.User;
 public class SignInActivity extends AppCompatActivity {
 
     public static final int SIGN_UP_REQUEST = 10;
-    public static final int FORGOTTEN_PASSWORD_REQUEST = 20;
     EditText editTextUsername;
     EditText editTextPassword;
     Button signInButton;
@@ -40,7 +39,7 @@ public class SignInActivity extends AppCompatActivity {
 
         txtForgottenPassword.setOnClickListener(view -> {
             intent = new Intent(getApplicationContext(), ForgottenPasswordActivity.class);
-            startActivityForResult(intent, FORGOTTEN_PASSWORD_REQUEST);
+            startActivity(intent);
         });
 
         signInButton.setOnClickListener(view -> {
@@ -67,11 +66,5 @@ public class SignInActivity extends AppCompatActivity {
             }
         }
 
-        if(requestCode == FORGOTTEN_PASSWORD_REQUEST && resultCode == RESULT_OK && data != null) {
-            String newPassword = data.getStringExtra(ForgottenPasswordActivity.CHANGE_PASSWORD);
-            if(newPassword != null && !newPassword.isEmpty()) {
-                new ResetPasswordAsyncTask(SignInActivity.this, editTextUsername.getText().toString().trim(), newPassword).execute();
-            }
-        }
     }
 }

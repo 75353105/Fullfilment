@@ -8,13 +8,12 @@ import android.os.Bundle;
 import android.widget.EditText;
 
 import com.example.fullfilment_v3.R;
+import com.example.fullfilment_v3.asynctask.ResetPasswordAsyncTask;
 import com.google.android.material.button.MaterialButton;
 
 import at.favre.lib.crypto.bcrypt.BCrypt;
 
 public class ForgottenPasswordActivity extends AppCompatActivity {
-
-    public static final String CHANGE_PASSWORD = "changePassword";
 
     EditText editTextUsername;
     EditText editTextNewPassword;
@@ -35,50 +34,72 @@ public class ForgottenPasswordActivity extends AppCompatActivity {
             String username = editTextUsername.getText().toString().trim();
             String newPassword = editTextNewPassword.getText().toString().trim();
             String confirmedPassword = editTextConfirmNewPassword.getText().toString().trim();
+            boolean hasError = false;
 
             if(username.isEmpty()) {
                 editTextUsername.setHint("The username must be added!");
                 editTextUsername.setHintTextColor(Color.RED);
+                editTextUsername.setError("");
+                hasError = true;
             }
             else {
                 editTextUsername.setHint("Enter your username");
                 editTextUsername.setHintTextColor(Color.WHITE);
+                editTextUsername.setError(null);
             }
 
             if(newPassword.isEmpty()) {
                 editTextNewPassword.setHint("A new password must be added!");
                 editTextNewPassword.setHintTextColor(Color.RED);
+                editTextNewPassword.setError("");
+                hasError = true;
             } else {
                 editTextNewPassword.setHint("Enter a new password");
                 editTextNewPassword.setHintTextColor(Color.WHITE);
+                editTextNewPassword.setError(null);
             }
 
             if(confirmedPassword.isEmpty()) {
                 editTextConfirmNewPassword.setHint("The password must be confirmed!");
                 editTextConfirmNewPassword.setHintTextColor(Color.RED);
+                editTextConfirmNewPassword.setError("");
+                hasError = true;
             } else {
                 editTextConfirmNewPassword.setHint("Confirm the new password");
                 editTextConfirmNewPassword.setHintTextColor(Color.WHITE);
+                editTextConfirmNewPassword.setError(null);
             }
 
-            if(!newPassword.equals(confirmedPassword)) {
-                editTextNewPassword.setHint("The passwords must match!");
-                editTextNewPassword.setHintTextColor(Color.RED);
-                editTextConfirmNewPassword.setHint("The passwords must match!");
-                editTextConfirmNewPassword.setHintTextColor(Color.RED);
+            if(!hasError) {
+                if (!newPassword.equals(confirmedPassword)) {
+                    editTextNewPassword.setHint("The passwords must match!");
+                    editTextNewPassword.setHintTextColor(Color.RED);
+                    editTextNewPassword.setError("");
+                    editTextConfirmNewPassword.setHint("The passwords must match!");
+                    editTextConfirmNewPassword.setHintTextColor(Color.RED);
+                    editTextConfirmNewPassword.setError("");
+                    hasError = true;
+                } else {
+                    editTextNewPassword.setHint("Enter a new password");
+                    editTextNewPassword.setHintTextColor(Color.WHITE);
+                    editTextConfirmNewPassword.setHint("Confirm the new password");
+                    editTextConfirmNewPassword.setHintTextColor(Color.WHITE);
+                    editTextConfirmNewPassword.setError(null);
+                    editTextNewPassword.setError(null);
+                }
+            }
+
+            if(hasError) {
+                return;
             } else {
-                editTextNewPassword.setHint("Enter a new password");
-                editTextNewPassword.setHintTextColor(Color.WHITE);
-                editTextConfirmNewPassword.setHint("Confirm the new password");
-                editTextConfirmNewPassword.setHintTextColor(Color.WHITE);
+                String newHashedPassword = BCrypt.withDefaults().hashToString(12, newPassword.toCharArray());
+
+                new ResetPasswordAsyncTask(ForgottenPasswordActivity.this, username, newHashedPassword).execute();
+
+                finish();
+                startActivity(new Intent(ForgottenPasswordActivity.this, SignInActivity.class));
             }
 
-            String newHashedPassword = BCrypt.withDefaults().hashToString(12, newPassword.toCharArray());
-
-            Intent intent = new Intent();
-            intent.putExtra(CHANGE_PASSWORD, newHashedPassword);
-            setResult(RESULT_OK);
-            finish();
         });
     }
 }
