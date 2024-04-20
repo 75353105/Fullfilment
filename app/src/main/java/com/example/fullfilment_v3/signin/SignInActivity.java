@@ -5,13 +5,16 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.fullfilment_v3.R;
 import com.example.fullfilment_v3.asynctask.InsertUserAsyncTask;
-import com.example.fullfilment_v3.asynctask.ResetPasswordAsyncTask;
 import com.example.fullfilment_v3.asynctask.VerifyUserAsyncTask;
 import com.example.fullfilment_v3.signup.SignUpActivity;
 import com.example.fullfilment_v3.users.User;
@@ -25,17 +28,27 @@ public class SignInActivity extends AppCompatActivity {
     Button signUpButton;
     Intent intent;
     TextView txtForgottenPassword;
+    CheckBox showPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_sign_in);
 
         editTextUsername = findViewById(R.id.editTextUsername);
         editTextPassword = findViewById(R.id.editTextPassword);
         signInButton = findViewById(R.id.btnSignIn);
         signUpButton = findViewById(R.id.btnSignUp);
         txtForgottenPassword = findViewById(R.id.txtForgotPassword);
+        showPassword = findViewById(R.id.cbShowPassword);
+
+        showPassword.setOnCheckedChangeListener((compoundButton, isChecked) -> {
+            if(isChecked) {
+                editTextPassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+            } else {
+                editTextPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
+            }
+        });
 
         txtForgottenPassword.setOnClickListener(view -> {
             intent = new Intent(getApplicationContext(), ForgottenPasswordActivity.class);

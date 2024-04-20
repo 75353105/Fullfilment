@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
+import android.widget.CheckBox;
 import android.widget.EditText;
 
 import com.example.fullfilment_v3.R;
@@ -25,6 +28,8 @@ public class SignUpActivity extends AppCompatActivity {
     EditText editTextConfirmPassword;
     MaterialButton btnSignUp;
     Intent intent;
+    CheckBox cbPassword;
+    CheckBox cbConfirmPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +44,24 @@ public class SignUpActivity extends AppCompatActivity {
         editTextPassword = findViewById(R.id.editTextPassword);
         editTextConfirmPassword = findViewById(R.id.editTextConfirmPassword);
         btnSignUp = findViewById(R.id.btnSignUp);
+        cbPassword = findViewById(R.id.cbShowPassword);
+        cbConfirmPassword = findViewById(R.id.cbShowConfirmedPassword);
+
+        cbPassword.setOnCheckedChangeListener((compoundButton, isChecked) -> {
+            if(isChecked) {
+                editTextPassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+            } else {
+                editTextPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
+            }
+        });
+
+        cbConfirmPassword.setOnCheckedChangeListener((compoundButton, isChecked) -> {
+            if(isChecked) {
+                editTextConfirmPassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+            } else {
+                editTextConfirmPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
+            }
+        });
 
         btnSignUp.setOnClickListener(view -> {
 

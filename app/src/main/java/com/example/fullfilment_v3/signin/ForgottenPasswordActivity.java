@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
+import android.widget.CheckBox;
 import android.widget.EditText;
 
 import com.example.fullfilment_v3.R;
@@ -20,6 +23,9 @@ public class ForgottenPasswordActivity extends AppCompatActivity {
     EditText editTextConfirmNewPassword;
     MaterialButton btnResetPassword;
 
+    CheckBox cbShowPassword;
+    CheckBox cbShowConfirmation;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +35,24 @@ public class ForgottenPasswordActivity extends AppCompatActivity {
         editTextNewPassword = findViewById(R.id.editTextNewPassword);
         editTextConfirmNewPassword = findViewById(R.id.editTextConfirmNewPassword);
         btnResetPassword = findViewById(R.id.btnReset);
+        cbShowConfirmation = findViewById(R.id.cbShowConfirmPassword);
+        cbShowPassword = findViewById(R.id.cbShowNewPassword);
+
+        cbShowPassword.setOnCheckedChangeListener((compoundButton, isChecked) -> {
+            if(isChecked) {
+                editTextNewPassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+            } else {
+                editTextNewPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
+            }
+        });
+
+        cbShowConfirmation.setOnCheckedChangeListener((compoundButton, isChecked) -> {
+            if(isChecked) {
+                editTextConfirmNewPassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+            } else {
+                editTextConfirmNewPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
+            }
+        });
 
         btnResetPassword.setOnClickListener(view -> {
             String username = editTextUsername.getText().toString().trim();
