@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Fullfilment_v3</string>
+    <string name="app_client_id">1026860616119-36oah7d62vj9vvl07lhld9ek9bu2br6f.apps.googleusercontent.com </string>
+    <string name="web_client_id">1026860616119-8gaoi30jle1coqds31sps5o9pmnn9ntt.apps.googleusercontent.com</string>
 </resources>
