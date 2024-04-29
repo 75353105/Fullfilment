@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -36,6 +35,7 @@ import com.google.android.gms.auth.api.identity.SignInCredential;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 
+
 public class SignInActivity extends AppCompatActivity {
 
     public static final int SIGN_UP_REQUEST = 10;
@@ -46,13 +46,9 @@ public class SignInActivity extends AppCompatActivity {
     Intent intent;
     TextView txtForgottenPassword;
     CheckBox showPassword;
-
     ImageView imgGoogle;
-
     private SignInClient oneTapClient;
     private BeginSignInRequest signInRequest;
-    public static final int GOOGLE_LOG_IN = 20;
-    private boolean showOneTapUI = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -138,6 +134,7 @@ public class SignInActivity extends AppCompatActivity {
                         }
                     });
         });
+
     }
 
     @Override

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android = "http://schemas.android.com/apk/res/android"
+    xmlns:app = "http://schemas.android.com/apk/res-auto"
+    xmlns:tools = "http://schemas.android.com/tools"
+    android:layout_width = "match_parent"
+    android:layout_height = "match_parent"
+    android:background = "@drawable/fundal_mental_health"
+    tools:context = ".appactivities.mentalhealthinfo.MentalHealthInfoActivity">
+
+    <TextView
+        android:id = "@+id/txtDiscover"
+        android:layout_width = "wrap_content"
+        android:layout_height = "wrap_content"
+        android:layout_margin = "15dp"
+        android:text = "Knowledge is power. Inform yourself about potential
+                      mental health conditions better!"
+        android:textColor = "@color/white"
+        android:textSize = "28sp"
+        android:textAlignment = "center"/>
+
+    <GridLayout
+        android:layout_width = "match_parent"
+        android:layout_height = "match_parent"
+        android:layout_below = "@id/txtDiscover"
+        android:layout_alignParentBottom = "true"
+        android:rowCount = "5"
+        android:columnCount = "2">
+
+        <androidx.cardview.widget.CardView
+            android:id = "@+id/cardViewPTSD"
+            android:layout_width = "match_parent"
+            android:layout_height = "wrap_content"
+            app:cardCornerRadius = "15dp"
+            app:cardElevation = "12dp"
+            android:layout_columnWeight = "1"
+            android:layout_row = "0"
+            android:layout_column = "0"
+            android:backgroundTint="@color/white">
+
+            <LinearLayout
+                android:layout_width = "match_parent"
+                android:layout_height = "match_parent"
+                android:layout_margin = "12dp"
+                android:orientation = "vertical">
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </GridLayout>
+
+</RelativeLayout>
