@@ -1,10 +1,13 @@
 package com.example.fullfilment_v3.appactivities;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.fullfilment_v3.R;
 import com.example.fullfilment_v3.signin.SignInActivity;
@@ -28,8 +31,25 @@ public class WelcomePageActivity extends AppCompatActivity {
         });
 
         btnSignOut.setOnClickListener(view -> {
-            finish();
-            startActivity(new Intent(WelcomePageActivity.this, SignInActivity.class));
+            AlertDialog dialog = new AlertDialog.Builder(WelcomePageActivity.this)
+                    .setTitle("Confirmare stergere")
+                    .setMessage("Doriti sa stergeti?")
+                    .setNegativeButton("NU", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            dialogInterface.cancel();
+                        }
+                    })
+                    .setPositiveButton("DA", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            finish();
+                            startActivity(new Intent(WelcomePageActivity.this, SignInActivity.class));
+                            dialogInterface.cancel();
+                        }
+                    }).create();
+
+            dialog.show();
         });
     }
 }

@@ -5,10 +5,11 @@ import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 
 import com.example.fullfilment_v3.R;
+import com.example.fullfilment_v3.appactivities.mentalhealthinfo.MeditationsActivity;
 import com.example.fullfilment_v3.appactivities.mentalhealthinfo.MentalHealthInfoActivity;
+import com.example.fullfilment_v3.appactivities.mentalhealthinfo.StretchingExercisesActivity;
 
 public class HomeDashboardActivity extends AppCompatActivity {
 
@@ -26,11 +27,13 @@ public class HomeDashboardActivity extends AppCompatActivity {
         cardViewMentalHealthInfo = findViewById(R.id.cardViewMentalHealth);
 
         cardViewMeditaion.setOnClickListener(view -> {
-
+            Intent intent = new Intent(HomeDashboardActivity.this, MeditationsActivity.class);
+            startActivity(intent);
         });
 
         cardViewStretchingExercises.setOnClickListener(view -> {
-
+            Intent intent = new Intent(HomeDashboardActivity.this, StretchingExercisesActivity.class);
+            startActivity(intent);
         });
 
         cardViewMentalHealthInfo.setOnClickListener(view -> {

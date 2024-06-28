@@ -127,20 +127,12 @@
         android:layout_alignParentBottom = "true">
 
         <ImageView
-            android:id = "@+id/imageGoogle"
-            android:layout_width = "50dp"
-            android:layout_height = "50dp"
-            android:src = "@drawable/logo_google"
-            android:layout_marginLeft = "100dp"
-            android:layout_marginBottom = "30dp"/>
-
-        <ImageView
-            android:id = "@+id/imageFacebook"
-            android:layout_width = "50dp"
-            android:layout_height = "50dp"
-            android:src = "@drawable/logo_facebook"
-            android:layout_marginLeft = "120dp"
-            android:layout_marginBottom = "30dp"/>
+            android:id="@+id/imageGoogle"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginBottom="30dp"
+            android:src="@drawable/logo_google" />
 
     </LinearLayout>
 
