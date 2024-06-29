@@ -3,6 +3,7 @@ package com.example.fullfilment_v3.appactivities.mentalhealthinfo;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -38,7 +39,8 @@ public class MentalHealthInfoActivity extends AppCompatActivity {
         cardViewPTSD = findViewById(R.id.cardViewPTSD);
 
         cardViewPTSD.setOnClickListener(view -> {
-
+            Intent intent = new Intent(MentalHealthInfoActivity.this, PTSDInfoActivity.class);
+            startActivity(intent);
         });
     }
 }

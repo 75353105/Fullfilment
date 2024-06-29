@@ -32,8 +32,8 @@ public class WelcomePageActivity extends AppCompatActivity {
 
         btnSignOut.setOnClickListener(view -> {
             AlertDialog dialog = new AlertDialog.Builder(WelcomePageActivity.this)
-                    .setTitle("Confirmare stergere")
-                    .setMessage("Doriti sa stergeti?")
+                    .setTitle("Confirmare delogare")
+                    .setMessage("Sunteți sigur că vreți să ieșiți din cont?")
                     .setNegativeButton("NU", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
