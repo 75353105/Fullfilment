@@ -32,15 +32,15 @@ public class WelcomePageActivity extends AppCompatActivity {
 
         btnSignOut.setOnClickListener(view -> {
             AlertDialog dialog = new AlertDialog.Builder(WelcomePageActivity.this)
-                    .setTitle("Confirmare delogare")
-                    .setMessage("Sunteți sigur că vreți să ieșiți din cont?")
-                    .setNegativeButton("NU", new DialogInterface.OnClickListener() {
+                    .setTitle("Confirmation of the sign out")
+                    .setMessage("Are you sure you want to sign out from the app?")
+                    .setNegativeButton("No", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
                             dialogInterface.cancel();
                         }
                     })
-                    .setPositiveButton("DA", new DialogInterface.OnClickListener() {
+                    .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
                             finish();
