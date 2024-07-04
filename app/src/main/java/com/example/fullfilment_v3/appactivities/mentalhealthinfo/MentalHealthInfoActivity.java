@@ -5,9 +5,9 @@ import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 
 import com.example.fullfilment_v3.R;
+import com.example.fullfilment_v3.appactivities.mentalhealthinfo.articles.PTSDInfoActivity;
 
 public class MentalHealthInfoActivity extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package com.example.fullfilment_v3.appactivities.mentalhealthinfo;
+package com.example.fullfilment_v3.appactivities.stretchingexercises;
 
 import androidx.appcompat.app.AppCompatActivity;
 

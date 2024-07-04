@@ -1,4 +1,4 @@
-package com.example.fullfilment_v3.appactivities.mentalhealthinfo;
+package com.example.fullfilment_v3.appactivities.meditations;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,11 +6,11 @@ import android.os.Bundle;
 
 import com.example.fullfilment_v3.R;
 
-public class PTSDInfoActivity extends AppCompatActivity {
+public class MeditationsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ptsdinfo);
+        setContentView(R.layout.activity_meditations);
     }
 }

@@ -12,9 +12,9 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.example.fullfilment_v3.R;
-import com.example.fullfilment_v3.appactivities.mentalhealthinfo.MeditationsActivity;
+import com.example.fullfilment_v3.appactivities.meditations.MeditationsActivity;
 import com.example.fullfilment_v3.appactivities.mentalhealthinfo.MentalHealthInfoActivity;
-import com.example.fullfilment_v3.appactivities.mentalhealthinfo.StretchingExercisesActivity;
+import com.example.fullfilment_v3.appactivities.stretchingexercises.StretchingExercisesActivity;
 
 public class HomeDashboardActivity extends AppCompatActivity {
 
