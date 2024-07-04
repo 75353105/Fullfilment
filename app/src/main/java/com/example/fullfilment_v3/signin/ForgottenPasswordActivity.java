@@ -38,6 +38,9 @@ public class ForgottenPasswordActivity extends AppCompatActivity {
         cbShowConfirmation = findViewById(R.id.cbShowConfirmPassword);
         cbShowPassword = findViewById(R.id.cbShowNewPassword);
 
+        editTextNewPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
+        editTextConfirmNewPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
+
         cbShowPassword.setOnCheckedChangeListener((compoundButton, isChecked) -> {
             if(isChecked) {
                 editTextNewPassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());

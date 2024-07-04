@@ -69,6 +69,8 @@ public class SignInActivity extends AppCompatActivity {
                         setSupported(true).setServerClientId(getString(R.string.web_client_id)).
                         setFilterByAuthorizedAccounts(false).build()).build();
 
+        editTextPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
+
         showPassword.setOnCheckedChangeListener((compoundButton, isChecked) -> {
             if(isChecked) {
                 editTextPassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());

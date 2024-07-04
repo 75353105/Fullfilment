@@ -47,6 +47,9 @@ public class SignUpActivity extends AppCompatActivity {
         cbPassword = findViewById(R.id.cbShowPassword);
         cbConfirmPassword = findViewById(R.id.cbShowConfirmedPassword);
 
+        editTextPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
+        editTextConfirmPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
+
         cbPassword.setOnCheckedChangeListener((compoundButton, isChecked) -> {
             if(isChecked) {
                 editTextPassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());

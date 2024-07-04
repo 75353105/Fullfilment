@@ -13,7 +13,7 @@
         android:layout_height = "wrap_content"
         android:layout_margin = "50dp"
         android:gravity = "center"
-        android:text = "Fulfillment"
+        android:text = "Fullfilment"
         android:textColor = "@color/white"
         android:textSize = "65dp"/>
 
@@ -61,7 +61,7 @@
         android:textSize = "30dp"
         android:drawableLeft = "@drawable/baseline_shield_30"
         android:drawablePadding = "15dp"/>
-    
+
     <CheckBox
         android:id = "@+id/cbShowPassword"
         android:layout_width = "match_parent"
@@ -130,7 +130,7 @@
             android:id="@+id/imageGoogle"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_marginLeft="100dp"
+            android:layout_marginLeft="170dp"
             android:layout_marginBottom="30dp"
             android:src="@drawable/logo_google" />
 
