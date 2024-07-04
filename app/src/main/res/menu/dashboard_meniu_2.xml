@@ -1,7 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <group>
-        <item android:title="">
+    <group android:checkableBehavior="single">
+        <item
+            android:title="Activities">
+            <menu>
+                <item
+                    android:id="@+id/idExercises"
+                    android:title="Exercises page"
+                    android:icon="@drawable/icon_stretching"/>
+                <item
+                    android:id="@+id/idMentalHealth"
+                    android:title="Mental health page"
+                    android:icon="@drawable/icon_mental_health"/>
+                <item
+                    android:id="@+id/idHome"
+                    android:title="Home page"
+                    android:icon="@drawable/baseline_home_24"/>
+            </menu>
+        </item>
+        <item
+            android:title="Settings">
+            <menu>
+                <item
+                    android:id="@+id/idThemes"
+                    android:title="Themes"
+                    android:icon="@drawable/baseline_imagesearch_roller_24"/>
+            </menu>
+        </item>
+        <item
+            android:title="Account">
+            <menu>
+                <item
+                    android:id="@+id/idPersonalAccount"
+                    android:title="Your Account"
+                    android:icon="@drawable/baseline_person_30"/>
+            </menu>
         </item>
     </group>
 </menu>
