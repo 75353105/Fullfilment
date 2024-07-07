@@ -5,4 +5,15 @@
     <string name="facebook_app_id">1234</string>
     <string name="fb_login_protocol_scheme">fb1234</string>
     <string name="facebook_client_token">56789</string>
+    <string name="exercises_page">Exercises page</string>
+    <string name="activities">Activities</string>
+    <string name="mental_health_page">Mental health page</string>
+    <string name="home_page">Home page</string>
+    <string name="settings">Settings</string>
+    <string name="themes">Themes</string>
+    <string name="account">Account</string>
+    <string name="your_account">Your Account</string>
+    <string name="todo">TODO</string>
+    <string name="remind_yourself_to_always_be_greatful">Remind yourself to always be greatful!</string>
+    <string name="pick_what_you_want_to_do_today">Pick what you want to do today</string>
 </resources>

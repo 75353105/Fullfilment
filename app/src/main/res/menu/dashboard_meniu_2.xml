@@ -2,38 +2,43 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <group android:checkableBehavior="single">
         <item
-            android:title="Activities">
+            android:title="@string/activities">
             <menu>
                 <item
                     android:id="@+id/idExercises"
-                    android:title="Exercises page"
-                    android:icon="@drawable/icon_stretching"/>
+                    android:title="@string/exercises_page"
+                    android:icon="@drawable/icon_stretching"
+                    android:iconTint="@color/white"/>
                 <item
                     android:id="@+id/idMentalHealth"
-                    android:title="Mental health page"
-                    android:icon="@drawable/icon_mental_health"/>
+                    android:title="@string/mental_health_page"
+                    android:icon="@drawable/icon_mental_health"
+                    android:iconTint="@color/white"/>
                 <item
                     android:id="@+id/idHome"
-                    android:title="Home page"
-                    android:icon="@drawable/baseline_home_24"/>
+                    android:title="@string/home_page"
+                    android:icon="@drawable/baseline_home_24"
+                    android:iconTint="@color/white"/>
             </menu>
         </item>
         <item
-            android:title="Settings">
+            android:title="@string/settings">
             <menu>
                 <item
                     android:id="@+id/idThemes"
-                    android:title="Themes"
-                    android:icon="@drawable/baseline_imagesearch_roller_24"/>
+                    android:title="@string/themes"
+                    android:icon="@drawable/baseline_imagesearch_roller_24"
+                    android:iconTint="@color/white"/>
             </menu>
         </item>
         <item
-            android:title="Account">
+            android:title="@string/account">
             <menu>
                 <item
                     android:id="@+id/idPersonalAccount"
-                    android:title="Your Account"
-                    android:icon="@drawable/baseline_person_30"/>
+                    android:title="@string/your_account"
+                    android:icon="@drawable/baseline_person_30"
+                    android:iconTint="@color/white"/>
             </menu>
         </item>
     </group>
