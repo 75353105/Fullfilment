@@ -1,10 +1,13 @@
 package com.example.fullfilment_v3.appactivities;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -23,6 +26,7 @@ import com.google.android.material.navigation.NavigationView;
 
 public class HomeDashboardActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
+    RelativeLayout background;
     CardView cardViewMeditaion;
     CardView cardViewStretchingExercises;
     CardView cardViewMentalHealthInfo;
@@ -36,6 +40,7 @@ public class HomeDashboardActivity extends AppCompatActivity implements Navigati
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_dashboard);
 
+        background = findViewById(R.id.layout_home);
         cardViewMeditaion = findViewById(R.id.cardViewMeditation);
         cardViewStretchingExercises = findViewById(R.id.cardViewStrecthingExercises);
         cardViewMentalHealthInfo = findViewById(R.id.cardViewMentalHealth);
@@ -109,5 +114,13 @@ public class HomeDashboardActivity extends AppCompatActivity implements Navigati
             startActivity(personalAccountIntent);
         }
         return true;
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        SharedPreferences settings = getSharedPreferences("Background", Context.MODE_PRIVATE);
+        int backgroundId = settings.getInt("background", R.drawable.gradient_dashboard_2);
+        background.setBackgroundResource(backgroundId);
     }
 }

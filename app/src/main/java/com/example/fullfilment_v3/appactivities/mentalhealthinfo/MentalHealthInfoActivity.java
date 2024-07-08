@@ -1,9 +1,12 @@
 package com.example.fullfilment_v3.appactivities.mentalhealthinfo;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,6 +25,7 @@ import com.google.android.material.navigation.NavigationView;
 
 public class MentalHealthInfoActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
+    RelativeLayout background;
     CardView cardViewPTSD;
     CardView cardViewDepression;
     CardView cardViewAnxiety;
@@ -41,6 +45,7 @@ public class MentalHealthInfoActivity extends AppCompatActivity implements Navig
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mental_health_info);
 
+        background = findViewById(R.id.layout_mental_health);
         cardViewADHD = findViewById(R.id.cardViewADHD);
         cardViewAnxiety = findViewById(R.id.cardViewAnxiety);
         cardViewBipolarDisorder = findViewById(R.id.cardViewBipolarDisorder);
@@ -107,5 +112,13 @@ public class MentalHealthInfoActivity extends AppCompatActivity implements Navig
             startActivity(personalAccountIntent);
         }
         return true;
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        SharedPreferences settings = getSharedPreferences("Background", Context.MODE_PRIVATE);
+        int backgroundId = settings.getInt("background", R.drawable.fundal_mental_health);
+        background.setBackgroundResource(backgroundId);
     }
 }

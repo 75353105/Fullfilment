@@ -1,9 +1,12 @@
 package com.example.fullfilment_v3.appactivities.stretchingexercises;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,6 +23,7 @@ import com.google.android.material.navigation.NavigationView;
 
 public class StretchingExercisesActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
+    RelativeLayout background;
     DrawerLayout drawer;
     ImageView imageView;
     NavigationView navigationView;
@@ -29,6 +33,7 @@ public class StretchingExercisesActivity extends AppCompatActivity implements Na
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stretching_exercises);
 
+        background = findViewById(R.id.layout_exercises);
         drawer = findViewById(R.id.drawer_layout_stretching);
         imageView = findViewById(R.id.img_navST);
         navigationView = findViewById(R.id.idNavView3);
@@ -79,5 +84,13 @@ public class StretchingExercisesActivity extends AppCompatActivity implements Na
             startActivity(personalAccountIntent);
         }
         return true;
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        SharedPreferences settings = getSharedPreferences("Background", Context.MODE_PRIVATE);
+        int backgroundId = settings.getInt("background", R.drawable.fundal_mental_health);
+        background.setBackgroundResource(backgroundId);
     }
 }

@@ -1,9 +1,12 @@
 package com.example.fullfilment_v3.appactivities.meditations;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,6 +23,7 @@ import com.google.android.material.navigation.NavigationView;
 
 public class MeditationsActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
+    RelativeLayout background;
     DrawerLayout drawer;
     ImageView imageView;
     NavigationView navigationView;
@@ -29,6 +33,7 @@ public class MeditationsActivity extends AppCompatActivity implements Navigation
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_meditations);
 
+        background= findViewById(R.id.layout_meditations);
         drawer = findViewById(R.id.drawer_layout_meditations);
         imageView = findViewById(R.id.img_navMED);
         navigationView = findViewById(R.id.idNavView2);
@@ -79,5 +84,13 @@ public class MeditationsActivity extends AppCompatActivity implements Navigation
             startActivity(personalAccountIntent);
         }
         return true;
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        SharedPreferences settings = getSharedPreferences("Background", Context.MODE_PRIVATE);
+        int backgroundId = settings.getInt("background", R.drawable.fundal_welcome_gradient);
+        background.setBackgroundResource(backgroundId);
     }
 }
