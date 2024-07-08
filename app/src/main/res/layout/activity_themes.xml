@@ -2,6 +2,7 @@
 <androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout_themes"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fundal_welcome_gradient"
@@ -21,10 +22,11 @@
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
+        android:id="@+id/layout_themes"
         android:background="@drawable/fundal_welcome_gradient">
 
         <ImageView
-            android:id="@+id/img_nav"
+            android:id="@+id/img_nav_themes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/baseline_menu_24_white"
@@ -86,6 +88,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/cardViewTheme2"
         android:layout_marginTop="50dp"
         android:layout_marginRight="7dp"
         android:layout_centerHorizontal="true"
@@ -102,6 +105,7 @@
         <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/cardViewTheme3"
             android:layout_marginTop="50dp"
             android:layout_marginRight="7dp"
             android:layout_centerHorizontal="true"
@@ -118,6 +122,7 @@
         <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/cardViewTheme4"
             android:layout_marginTop="50dp"
             android:layout_marginRight="7dp"
             android:layout_centerHorizontal="true"
@@ -134,6 +139,7 @@
         <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/cardViewTheme5"
             android:layout_marginTop="50dp"
             android:layout_marginRight="7dp"
             android:layout_centerHorizontal="true"
@@ -150,6 +156,7 @@
         <androidx.cardview.widget.CardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/cardViewTheme6"
             android:layout_marginTop="50dp"
             android:layout_marginRight="5dp"
             android:layout_centerHorizontal="true"

@@ -1,19 +1,21 @@
 package com.example.fullfilment_v3.appactivities;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.DialogInterface;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
-import android.widget.Toast;
+import android.widget.RelativeLayout;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.fullfilment_v3.R;
 import com.example.fullfilment_v3.signin.SignInActivity;
 
 public class WelcomePageActivity extends AppCompatActivity {
 
+    RelativeLayout background;
     Button btnStartApplication;
     Button btnSignOut;
 
@@ -22,6 +24,7 @@ public class WelcomePageActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome_page);
 
+        background = findViewById(R.id.layout_welcome);
         btnSignOut = findViewById(R.id.btnSignOut);
         btnStartApplication = findViewById(R.id.btnStart);
 
@@ -34,22 +37,22 @@ public class WelcomePageActivity extends AppCompatActivity {
             AlertDialog dialog = new AlertDialog.Builder(WelcomePageActivity.this)
                     .setTitle("Confirmation of the sign out")
                     .setMessage("Are you sure you want to sign out from the app?")
-                    .setNegativeButton("No", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            dialogInterface.cancel();
-                        }
-                    })
-                    .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            finish();
-                            startActivity(new Intent(WelcomePageActivity.this, SignInActivity.class));
-                            dialogInterface.cancel();
-                        }
+                    .setNegativeButton("No", (dialogInterface, i) -> dialogInterface.cancel())
+                    .setPositiveButton("Yes", (dialogInterface, i) -> {
+                        finish();
+                        startActivity(new Intent(WelcomePageActivity.this, SignInActivity.class));
+                        dialogInterface.cancel();
                     }).create();
 
             dialog.show();
         });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        SharedPreferences settings = getSharedPreferences("Background", Context.MODE_PRIVATE);
+        int backgroundId = settings.getInt("background", R.drawable.fundal_welcome_gradient);
+        background.setBackgroundResource(backgroundId);
     }
 }

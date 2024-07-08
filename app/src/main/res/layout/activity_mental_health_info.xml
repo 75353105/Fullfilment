@@ -22,6 +22,7 @@
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/layout_mental_health"
         android:background="@drawable/fundal_mental_health">
 
         <ImageView
