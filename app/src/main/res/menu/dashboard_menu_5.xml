@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+    <item
+        android:title="Activities">
+    <menu>
+        <item
+            android:id="@+id/idMeditation"
+            android:title="Meditations page"
+            android:icon="@drawable/meditation_icon"/>
+        <item
+            android:id="@+id/idMentalHealth"
+            android:title="Mental health page"
+            android:icon="@drawable/icon_mental_health"/>
+        <item
+            android:id="@+id/idHome"
+            android:title="Home page"
+            android:icon="@drawable/baseline_home_24"/>
+    </menu>
+    </item>
+        <item
+            android:title="Account">
+            <menu>
+                <item
+                    android:id="@+id/idPersonalAccount"
+                    android:title="Your Account"
+                    android:icon="@drawable/baseline_person_30"/>
+            </menu>
+        </item>
+    </group>
+</menu>

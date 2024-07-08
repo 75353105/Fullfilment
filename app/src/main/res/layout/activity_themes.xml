@@ -1,9 +1,169 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".appactivities.settings.ThemesActivity">
+    android:background="@drawable/fundal_welcome_gradient"
+    tools:context=".appactivities.settings.ThemesActivity"
+    android:fitsSystemWindows="true">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/idNavView5"
+        app:menu="@menu/dashboard_menu_5"
+        app:itemTextColor="@color/white"
+        app:itemIconTint="@color/white"
+        android:background="@drawable/fundal_welcome_gradient"
+        android:layout_gravity="start"/>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@drawable/fundal_welcome_gradient">
+
+        <ImageView
+            android:id="@+id/img_nav"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_menu_24_white"
+            android:padding="16dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:contentDescription="TODO"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtThemes"
+        android:layout_marginTop = "50dp"
+        android:layout_marginLeft = "50dp"
+        android:layout_marginRight = "50dp"
+        android:gravity = "center"
+        android:text = "Themes"
+        android:textColor = "@color/white"
+        android:textSize = "55dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtExplanation"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight = "50dp"
+        android:layout_below="@id/txtThemes"
+        android:gravity = "center"
+        android:text = "Here you can select a new look for your app"
+        android:textColor = "@color/white"
+        android:textSize = "30dp"/>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/txtExplanation">
+
+    
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/cardViewTheme1"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="7dp"
+        android:layout_centerHorizontal="true"
+        app:cardCornerRadius="50dp"
+        android:elevation="4dp">
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:id="@+id/idTheme1"
+            android:scaleType="centerCrop"
+            android:src="@drawable/fundal_login_gradient"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="7dp"
+        android:layout_centerHorizontal="true"
+        app:cardCornerRadius="50dp"
+        android:elevation="4dp">
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:id="@+id/idTheme2"
+            android:scaleType="centerCrop"
+            android:src="@drawable/fundal_welcome_gradient"/>
+    </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="7dp"
+            android:layout_centerHorizontal="true"
+            app:cardCornerRadius="50dp"
+            android:elevation="4dp">
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:id="@+id/idTheme3"
+                android:scaleType="centerCrop"
+                android:src="@drawable/gradient_dashboard_2"/>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="7dp"
+            android:layout_centerHorizontal="true"
+            app:cardCornerRadius="50dp"
+            android:elevation="4dp">
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:id="@+id/idTheme4"
+                android:scaleType="centerCrop"
+                android:src="@drawable/fundal_tema_verde_roz"/>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="7dp"
+            android:layout_centerHorizontal="true"
+            app:cardCornerRadius="50dp"
+            android:elevation="4dp">
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:id="@+id/idTheme5"
+                android:scaleType="centerCrop"
+                android:src="@drawable/fundal_tema_roz_maro"/>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="5dp"
+            android:layout_centerHorizontal="true"
+            app:cardCornerRadius="50dp"
+            android:elevation="4dp">
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:id="@+id/idTheme6"
+                android:scaleType="centerCrop"
+                android:src="@drawable/fundal_mental_health"/>
+        </androidx.cardview.widget.CardView>
+
+    </GridLayout>
+</RelativeLayout>
+
+</androidx.drawerlayout.widget.DrawerLayout>
