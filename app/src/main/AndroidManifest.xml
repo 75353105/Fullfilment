@@ -15,6 +15,14 @@
         android:theme="@style/Theme.Fullfilment_v3"
         tools:targetApi="31">
         <activity
+            android:name=".appactivities.personalinfo.PersonalAccountActivity"
+            android:exported="false"
+            android:label="@string/title_activity_personal_account"
+            android:theme="@style/Theme.Fullfilment_v3" />
+        <activity
+            android:name=".appactivities.settings.ThemesActivity"
+            android:exported="false" />
+        <activity
             android:name=".appactivities.stretchingexercises.StretchingExercisesActivity"
             android:exported="false" />
         <activity

@@ -16,6 +16,8 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import com.example.fullfilment_v3.R;
 import com.example.fullfilment_v3.appactivities.meditations.MeditationsActivity;
 import com.example.fullfilment_v3.appactivities.mentalhealthinfo.MentalHealthInfoActivity;
+import com.example.fullfilment_v3.appactivities.personalinfo.PersonalAccountActivity;
+import com.example.fullfilment_v3.appactivities.settings.ThemesActivity;
 import com.example.fullfilment_v3.appactivities.stretchingexercises.StretchingExercisesActivity;
 import com.google.android.material.navigation.NavigationView;
 
@@ -96,6 +98,16 @@ public class HomeDashboardActivity extends AppCompatActivity implements Navigati
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+        int id = item.getItemId();
+        if(id == R.id.idThemes) {
+            Intent themesIntent = new Intent(HomeDashboardActivity.this, ThemesActivity.class);
+            startActivity(themesIntent);
+        }
+        if(id == R.id.idPersonalAccount) {
+            Intent personalAccountIntent = new Intent(HomeDashboardActivity.this, PersonalAccountActivity.class);
+            startActivity(personalAccountIntent);
+        }
         return true;
     }
 }

@@ -1,5 +1,6 @@
 package com.example.fullfilment_v3.appactivities.stretchingexercises;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.ImageView;
@@ -10,6 +11,11 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.example.fullfilment_v3.R;
+import com.example.fullfilment_v3.appactivities.HomeDashboardActivity;
+import com.example.fullfilment_v3.appactivities.meditations.MeditationsActivity;
+import com.example.fullfilment_v3.appactivities.mentalhealthinfo.MentalHealthInfoActivity;
+import com.example.fullfilment_v3.appactivities.personalinfo.PersonalAccountActivity;
+import com.example.fullfilment_v3.appactivities.settings.ThemesActivity;
 import com.google.android.material.navigation.NavigationView;
 
 public class StretchingExercisesActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -51,6 +57,27 @@ public class StretchingExercisesActivity extends AppCompatActivity implements Na
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+        if(id == R.id.idMeditation) {
+            Intent meditationIntent = new Intent(StretchingExercisesActivity.this, MeditationsActivity.class);
+            startActivity(meditationIntent);
+        }
+        if(id == R.id.idMentalHealth) {
+            Intent mentalHealthIntent = new Intent(StretchingExercisesActivity.this, MentalHealthInfoActivity.class);
+            startActivity(mentalHealthIntent);
+        }
+        if(id == R.id.idHome) {
+            Intent homeIntent = new Intent(StretchingExercisesActivity.this, HomeDashboardActivity.class);
+            startActivity(homeIntent);
+        }
+        if(id == R.id.idThemes) {
+            Intent themesIntent = new Intent(StretchingExercisesActivity.this, ThemesActivity.class);
+            startActivity(themesIntent);
+        }
+        if(id == R.id.idPersonalAccount) {
+            Intent personalAccountIntent = new Intent(StretchingExercisesActivity.this, PersonalAccountActivity.class);
+            startActivity(personalAccountIntent);
+        }
         return true;
     }
 }

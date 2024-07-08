@@ -12,7 +12,12 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.example.fullfilment_v3.R;
+import com.example.fullfilment_v3.appactivities.HomeDashboardActivity;
+import com.example.fullfilment_v3.appactivities.meditations.MeditationsActivity;
 import com.example.fullfilment_v3.appactivities.mentalhealthinfo.articles.PTSDInfoActivity;
+import com.example.fullfilment_v3.appactivities.personalinfo.PersonalAccountActivity;
+import com.example.fullfilment_v3.appactivities.settings.ThemesActivity;
+import com.example.fullfilment_v3.appactivities.stretchingexercises.StretchingExercisesActivity;
 import com.google.android.material.navigation.NavigationView;
 
 public class MentalHealthInfoActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -79,6 +84,28 @@ public class MentalHealthInfoActivity extends AppCompatActivity implements Navig
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+        int id = item.getItemId();
+        if(id == R.id.idMeditation) {
+            Intent meditationIntent = new Intent(MentalHealthInfoActivity.this, MeditationsActivity.class);
+            startActivity(meditationIntent);
+        }
+        if(id == R.id.idExercises) {
+            Intent exercisesIntent = new Intent(MentalHealthInfoActivity.this, StretchingExercisesActivity.class);
+            startActivity(exercisesIntent);
+        }
+        if(id == R.id.idHome) {
+            Intent homeIntent = new Intent(MentalHealthInfoActivity.this, HomeDashboardActivity.class);
+            startActivity(homeIntent);
+        }
+        if(id == R.id.idThemes) {
+            Intent themesIntent = new Intent(MentalHealthInfoActivity.this, ThemesActivity.class);
+            startActivity(themesIntent);
+        }
+        if(id == R.id.idPersonalAccount) {
+            Intent personalAccountIntent = new Intent(MentalHealthInfoActivity.this, PersonalAccountActivity.class);
+            startActivity(personalAccountIntent);
+        }
         return true;
     }
 }
