@@ -5,7 +5,7 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/img"
+    android:background="@drawable/fundal_welcome_gradient"
     tools:context=".appactivities.HomeDashboardActivity"
     android:fitsSystemWindows="true">
 
@@ -14,8 +14,8 @@
         android:layout_height="match_parent"
         android:id="@+id/idNavView1"
         app:menu="@menu/dashboard_menu"
-        app:itemTextColor="@color/indigo"
-        app:itemIconTint="@color/indigo"
+        app:itemTextColor="@color/white"
+        app:itemIconTint="@color/white"
         android:background="@drawable/img"
         android:layout_gravity="start"/>
 
@@ -28,7 +28,7 @@
             android:id="@+id/img_nav"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/baseline_menu_24"
+            android:src="@drawable/baseline_menu_24_white"
             android:padding="16dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentStart="true"
@@ -41,7 +41,7 @@
             android:layout_margin="15dp"
             android:text = "@string/remind_yourself_to_always_be_greatful"
             android:textSize = "30sp"
-            android:textColor = "@color/indigo"
+            android:textColor = "@color/white"
             android:textAlignment = "center"/>
 
         <TextView
@@ -55,7 +55,7 @@
             android:layout_marginLeft = "20dp"
             android:text = "@string/pick_what_you_want_to_do_today"
             android:textSize = "25sp"
-            android:textColor = "@color/indigo"/>
+            android:textColor = "@color/white"/>
 
         <GridLayout
             android:layout_width = "match_parent"

@@ -90,7 +90,7 @@ public class StretchingExercisesActivity extends AppCompatActivity implements Na
     protected void onResume() {
         super.onResume();
         SharedPreferences settings = getSharedPreferences("Background", Context.MODE_PRIVATE);
-        int backgroundId = settings.getInt("background", R.drawable.fundal_mental_health);
+        int backgroundId = settings.getInt("background", R.drawable.fundal_welcome_gradient);
         background.setBackgroundResource(backgroundId);
     }
 }

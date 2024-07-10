@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -33,6 +34,7 @@ public class ThemesActivity extends AppCompatActivity implements NavigationView.
     CardView cardViewTheme4;
     CardView cardViewTheme5;
     CardView cardViewTheme6;
+    RelativeLayout background;
 
 
     @Override
@@ -49,6 +51,7 @@ public class ThemesActivity extends AppCompatActivity implements NavigationView.
         cardViewTheme4 = findViewById(R.id.cardViewTheme4);
         cardViewTheme5 = findViewById(R.id.cardViewTheme5);
         cardViewTheme6 = findViewById(R.id.cardViewTheme6);
+        background = findViewById(R.id.layout_themes);
 
         drawer.closeDrawer(GravityCompat.START);
         imageView.setOnClickListener(view -> {
@@ -199,4 +202,11 @@ public class ThemesActivity extends AppCompatActivity implements NavigationView.
         return true;
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        SharedPreferences settings = getSharedPreferences("Background", Context.MODE_PRIVATE);
+        int backgroundId = settings.getInt("background", R.drawable.fundal_welcome_gradient);
+        background.setBackgroundResource(backgroundId);
+    }
 }

@@ -5,7 +5,7 @@
     android:layout_width = "match_parent"
     android:layout_height = "match_parent"
     android:id="@+id/layout_PTSD"
-    android:background = "@drawable/fundal_mental_health"
+    android:background = "@drawable/fundal_welcome_gradient"
     tools:context = ".appactivities.mentalhealthinfo.articles.PTSDInfoActivity">
 
     <TextView

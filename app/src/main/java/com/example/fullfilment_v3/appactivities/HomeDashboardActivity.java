@@ -120,7 +120,7 @@ public class HomeDashboardActivity extends AppCompatActivity implements Navigati
     protected void onResume() {
         super.onResume();
         SharedPreferences settings = getSharedPreferences("Background", Context.MODE_PRIVATE);
-        int backgroundId = settings.getInt("background", R.drawable.gradient_dashboard_2);
+        int backgroundId = settings.getInt("background", R.drawable.fundal_welcome_gradient);
         background.setBackgroundResource(backgroundId);
     }
 }
