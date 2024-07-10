@@ -17,6 +17,9 @@
     <string name="remind_yourself_to_always_be_greatful">Remind yourself to always be greatful!</string>
     <string name="pick_what_you_want_to_do_today">Pick what you want to do today</string>
     <string name="title_activity_personal_account">PersonalAccountActivity</string>
+    <string name="linkToBetterHelp">
+        <a href="https://www.betterhelp.com/">Get some extra help. Click here for extra resources.</a>
+    </string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>

@@ -45,313 +45,339 @@
             android:textColor = "@color/white"
             android:textSize = "28sp"
             android:textAlignment = "center"/>
+        
+        <LinearLayout
+            android:id="@+id/lineraLayoutMentalHealth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtDiscover"
+            android:orientation="vertical"
+            android:weightSum="1">
 
         <GridLayout
-            android:layout_width = "match_parent"
-            android:layout_height = "match_parent"
-            android:layout_below = "@id/txtDiscover"
-            android:layout_alignParentBottom = "true"
-            android:rowCount = "5"
-            android:columnCount = "2">
+            android:id="@+id/idGridLayoutMentalHealth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txtDiscover"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="12dp"
+            android:columnCount="2"
+            android:rowCount="5">
 
             <androidx.cardview.widget.CardView
-                android:id = "@+id/cardViewPTSD"
-                android:layout_width = "100dp"
-                android:layout_height = "wrap_content"
-                app:cardCornerRadius = "15dp"
-                app:cardElevation = "12dp"
-                android:layout_columnWeight = "1"
-                android:layout_row = "0"
-                android:layout_column = "0"
-                android:backgroundTint="@color/burlywood">
+                android:id="@+id/cardViewPTSD"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:layout_columnWeight="1"
+                android:backgroundTint="@color/burlywood"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="12dp">
 
                 <LinearLayout
-                    android:layout_width = "match_parent"
-                    android:layout_height = "match_parent"
-                    android:layout_margin = "12dp"
-                    android:orientation = "vertical">
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="12dp"
+                    android:orientation="vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text = "PTSD"
-                        android:textSize = "18sp"
-                        android:textStyle = "bold"
-                        android:textColor = "@color/white"
-                        android:layout_gravity = "center_horizontal"/>
+                        android:layout_gravity="center_horizontal"
+                        android:text="PTSD"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id = "@+id/cardViewDepression"
-                android:layout_width = "100dp"
-                android:layout_height = "wrap_content"
-                app:cardCornerRadius = "15dp"
-                app:cardElevation = "12dp"
-                android:layout_columnWeight = "1"
-                android:layout_row = "0"
-                android:layout_column = "1"
-                android:backgroundTint="@color/burlywood">
+                android:id="@+id/cardViewDepression"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_row="0"
+                android:layout_column="1"
+                android:layout_columnWeight="1"
+                android:backgroundTint="@color/burlywood"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="12dp">
 
                 <LinearLayout
-                    android:layout_width = "match_parent"
-                    android:layout_height = "match_parent"
-                    android:layout_margin = "12dp"
-                    android:orientation = "vertical">
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="12dp"
+                    android:orientation="vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text = "Depression"
-                        android:textSize = "18sp"
-                        android:textStyle = "bold"
-                        android:textColor = "@color/white"
-                        android:layout_gravity = "center_horizontal"/>
+                        android:layout_gravity="center_horizontal"
+                        android:text="Depression"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id = "@+id/cardViewAnxiety"
-                android:layout_width = "100dp"
-                android:layout_height = "wrap_content"
-                app:cardCornerRadius = "15dp"
-                app:cardElevation = "12dp"
-                android:layout_columnWeight = "1"
-                android:layout_row = "1"
-                android:layout_column = "0"
-                android:backgroundTint="@color/burlywood">
+                android:id="@+id/cardViewAnxiety"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_row="1"
+                android:layout_column="0"
+                android:layout_columnWeight="1"
+                android:backgroundTint="@color/burlywood"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="12dp">
 
                 <LinearLayout
-                    android:layout_width = "match_parent"
-                    android:layout_height = "match_parent"
-                    android:layout_margin = "12dp"
-                    android:orientation = "vertical">
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="12dp"
+                    android:orientation="vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text = "Anxiety disorder"
-                        android:textSize = "18sp"
-                        android:textStyle = "bold"
-                        android:textColor = "@color/white"
-                        android:layout_gravity = "center_horizontal"/>
+                        android:layout_gravity="center_horizontal"
+                        android:text="Anxiety disorder"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id = "@+id/cardViewADHD"
-                android:layout_width = "100dp"
-                android:layout_height = "wrap_content"
-                app:cardCornerRadius = "15dp"
-                app:cardElevation = "12dp"
-                android:layout_columnWeight = "1"
-                android:layout_row = "1"
-                android:layout_column = "1"
-                android:backgroundTint="@color/burlywood">
+                android:id="@+id/cardViewADHD"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_row="1"
+                android:layout_column="1"
+                android:layout_columnWeight="1"
+                android:backgroundTint="@color/burlywood"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="12dp">
 
                 <LinearLayout
-                    android:layout_width = "match_parent"
-                    android:layout_height = "match_parent"
-                    android:layout_margin = "12dp"
-                    android:orientation = "vertical">
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="12dp"
+                    android:orientation="vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text = "ADHD"
-                        android:textSize = "18sp"
-                        android:textStyle = "bold"
-                        android:textColor = "@color/white"
-                        android:layout_gravity = "center_horizontal"/>
+                        android:layout_gravity="center_horizontal"
+                        android:text="ADHD"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id = "@+id/cardViewOCD"
-                android:layout_width = "100dp"
-                android:layout_height = "wrap_content"
-                app:cardCornerRadius = "15dp"
-                app:cardElevation = "12dp"
-                android:layout_columnWeight = "1"
-                android:layout_row = "2"
-                android:layout_column = "0"
-                android:backgroundTint="@color/burlywood">
+                android:id="@+id/cardViewOCD"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_row="2"
+                android:layout_column="0"
+                android:layout_columnWeight="1"
+                android:backgroundTint="@color/burlywood"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="12dp">
 
                 <LinearLayout
-                    android:layout_width = "match_parent"
-                    android:layout_height = "match_parent"
-                    android:layout_margin = "12dp"
-                    android:orientation = "vertical">
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="12dp"
+                    android:orientation="vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text = "OCD"
-                        android:textSize = "18sp"
-                        android:textStyle = "bold"
-                        android:textColor = "@color/white"
-                        android:layout_gravity = "center_horizontal"/>
+                        android:layout_gravity="center_horizontal"
+                        android:text="OCD"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id = "@+id/cardViewBipolarDisorder"
-                android:layout_width = "100dp"
-                android:layout_height = "wrap_content"
-                app:cardCornerRadius = "15dp"
-                app:cardElevation = "12dp"
-                android:layout_columnWeight = "1"
-                android:layout_row = "2"
-                android:layout_column = "1"
-                android:backgroundTint="@color/burlywood">
+                android:id="@+id/cardViewBipolarDisorder"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_row="2"
+                android:layout_column="1"
+                android:layout_columnWeight="1"
+                android:backgroundTint="@color/burlywood"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="12dp">
 
-            <LinearLayout
-                android:layout_width = "match_parent"
-                android:layout_height = "match_parent"
-                android:layout_margin = "12dp"
-                android:orientation = "vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="12dp"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text = "Bipolar disorder"
-                    android:textSize = "18sp"
-                    android:textStyle = "bold"
-                    android:textColor = "@color/white"
-                    android:layout_gravity = "center_horizontal"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="Bipolar disorder"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id = "@+id/cardViewInsomnia"
-                android:layout_width = "100dp"
-                android:layout_height = "wrap_content"
-                app:cardCornerRadius = "15dp"
-                app:cardElevation = "12dp"
-                android:layout_columnWeight = "1"
-                android:layout_row = "3"
-                android:layout_column = "0"
-                android:backgroundTint="@color/burlywood">
+                android:id="@+id/cardViewInsomnia"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_row="3"
+                android:layout_column="0"
+                android:layout_columnWeight="1"
+                android:backgroundTint="@color/burlywood"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="12dp">
 
                 <LinearLayout
-                    android:layout_width = "match_parent"
-                    android:layout_height = "match_parent"
-                    android:layout_margin = "12dp"
-                    android:orientation = "vertical">
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="12dp"
+                    android:orientation="vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text = "Insomnia"
-                        android:textSize = "18sp"
-                        android:textStyle = "bold"
-                        android:textColor = "@color/white"
-                        android:layout_gravity = "center_horizontal"/>
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id = "@+id/cardViewSelfEsteem"
-                android:layout_width = "100dp"
-                android:layout_height = "wrap_content"
-                app:cardCornerRadius = "15dp"
-                app:cardElevation = "12dp"
-                android:layout_columnWeight = "1"
-                android:layout_row = "3"
-                android:layout_column = "1"
-                android:backgroundTint="@color/burlywood">
-
-                <LinearLayout
-                    android:layout_width = "match_parent"
-                    android:layout_height = "match_parent"
-                    android:layout_margin = "12dp"
-                    android:orientation = "vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text = "Self esteem issues"
-                        android:textSize = "18sp"
-                        android:textStyle = "bold"
-                        android:textColor = "@color/white"
-                        android:layout_gravity = "center_horizontal"/>
-
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id = "@+id/cardViewSuicidalToughts"
-                android:layout_width = "100dp"
-                android:layout_height = "wrap_content"
-                app:cardCornerRadius = "15dp"
-                app:cardElevation = "12dp"
-                android:layout_columnWeight = "1"
-                android:layout_row = "4"
-                android:layout_column = "0"
-                android:backgroundTint="@color/burlywood">
-
-                <LinearLayout
-                    android:layout_width = "match_parent"
-                    android:layout_height = "match_parent"
-                    android:layout_margin = "12dp"
-                    android:orientation = "vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text = "Suicidal toughts"
-                        android:textSize = "18sp"
-                        android:textStyle = "bold"
-                        android:textColor = "@color/white"
-                        android:layout_gravity = "center_horizontal"/>
+                        android:layout_gravity="center_horizontal"
+                        android:text="Insomnia"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id = "@+id/cardViewFocusAndDiscipline"
-                android:layout_width = "100dp"
-                android:layout_height = "wrap_content"
-                app:cardCornerRadius = "15dp"
-                app:cardElevation = "12dp"
-                android:layout_columnWeight = "1"
-                android:layout_row = "4"
-                android:layout_column = "1"
-                android:backgroundTint="@color/burlywood">
+                android:id="@+id/cardViewSelfEsteem"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_row="3"
+                android:layout_column="1"
+                android:layout_columnWeight="1"
+                android:backgroundTint="@color/burlywood"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="12dp">
 
                 <LinearLayout
-                    android:layout_width = "match_parent"
-                    android:layout_height = "match_parent"
-                    android:layout_margin = "12dp"
-                    android:orientation = "vertical">
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="12dp"
+                    android:orientation="vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text = "Focus and Discipline"
-                        android:textSize = "18sp"
-                        android:textStyle = "bold"
-                        android:textColor = "@color/white"
-                        android:layout_gravity = "center_horizontal"/>
+                        android:layout_gravity="center_horizontal"
+                        android:text="Self esteem issues"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewSuicidalToughts"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_row="4"
+                android:layout_column="0"
+                android:layout_columnWeight="1"
+                android:backgroundTint="@color/burlywood"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="12dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="12dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="Suicidal toughts"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewFocusAndDiscipline"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_row="4"
+                android:layout_column="1"
+                android:layout_columnWeight="1"
+                android:backgroundTint="@color/burlywood"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="12dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="12dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="Focus and Discipline"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
         </GridLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/indicationLinkToBetterHelp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lineraLayoutMentalHealth"
+            android:gravity="center"
+            android:layout_marginTop="50dp"
+            android:text="@string/linkToBetterHelp"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:linksClickable="true"/>
+
     </RelativeLayout>
 
 </androidx.drawerlayout.widget.DrawerLayout>

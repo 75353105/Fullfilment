@@ -4,9 +4,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.method.LinkMovementMethod;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -39,6 +41,7 @@ public class MentalHealthInfoActivity extends AppCompatActivity implements Navig
     DrawerLayout drawer;
     ImageView imageView;
     NavigationView navigationView;
+    TextView linkToBetterHelp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +62,8 @@ public class MentalHealthInfoActivity extends AppCompatActivity implements Navig
         drawer = findViewById(R.id.drawer_layout_mental_health);
         imageView = findViewById(R.id.img_navMH);
         navigationView = findViewById(R.id.idNavView4);
+        linkToBetterHelp = findViewById(R.id.indicationLinkToBetterHelp);
+        linkToBetterHelp.setMovementMethod(LinkMovementMethod.getInstance());
 
         drawer.closeDrawer(GravityCompat.START);
         imageView.setOnClickListener(view -> {
