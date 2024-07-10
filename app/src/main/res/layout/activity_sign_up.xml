@@ -17,145 +17,156 @@
         android:textColor = "@color/white"
         android:textSize = "40dp"/>
 
-    <EditText
-        android:id = "@+id/editTextUsername"
-        android:layout_width = "match_parent"
-        android:layout_height = "wrap_content"
-        android:layout_below = "@id/tvSignUpText"
-        android:layout_marginStart = "20dp"
-        android:layout_marginTop = "35dp"
-        android:layout_marginEnd = "20dp"
-        android:layout_marginBottom = "15dp"
-        android:background = "#30ffffff"
-        android:hint = "Enter your username"
-        android:textColorHint = "@color/white"
-        android:textColor = "@color/white"
-        android:textSize = "30dp"
-        android:drawableLeft = "@drawable/baseline_person_30"
-        android:drawablePadding = "20dp"/>
+    <ScrollView
+        android:id="@+id/scollViewSignUp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tvSignUpText">
 
-    <EditText
-        android:id = "@+id/editTextEmail"
-        android:layout_width = "match_parent"
-        android:layout_height = "wrap_content"
-        android:layout_below = "@id/editTextUsername"
-        android:layout_marginStart = "20dp"
-        android:layout_marginTop = "15dp"
-        android:layout_marginEnd = "20dp"
-        android:layout_marginBottom = "15dp"
-        android:background = "#30ffffff"
-        android:hint = "Enter your email"
-        android:textColorHint = "@color/white"
-        android:textColor = "@color/white"
-        android:textSize = "30dp"
-        android:drawableLeft = "@drawable/baseline_alternate_email_30"
-        android:drawablePadding = "20dp"/>
-
-    <EditText
-        android:id = "@+id/editTextFirstName"
-        android:layout_width = "match_parent"
-        android:layout_height = "wrap_content"
-        android:layout_below = "@id/editTextEmail"
-        android:layout_marginStart = "20dp"
-        android:layout_marginTop = "15dp"
-        android:layout_marginEnd = "20dp"
-        android:layout_marginBottom = "15dp"
-        android:background = "#30ffffff"
-        android:hint = "Enter your first name"
-        android:textColorHint = "@color/white"
-        android:textColor = "@color/white"
-        android:textSize = "30dp"
-        android:drawableLeft = "@drawable/baseline_face_30"
-        android:drawablePadding = "20dp"/>
-
-    <EditText
-        android:id = "@+id/editTextLastName"
-        android:layout_width = "match_parent"
-        android:layout_height = "wrap_content"
-        android:layout_below = "@id/editTextFirstName"
-        android:layout_marginStart = "20dp"
-        android:layout_marginTop = "15dp"
-        android:layout_marginEnd = "20dp"
-        android:layout_marginBottom = "15dp"
-        android:background = "#30ffffff"
-        android:hint = "Enter your last name"
-        android:textColorHint = "@color/white"
-        android:textColor = "@color/white"
-        android:textSize = "30dp"
-        android:drawableLeft = "@drawable/baseline_face_30"
-        android:drawablePadding = "20dp"/>
-
-    <EditText
-        android:id = "@+id/editTextPassword"
-        android:layout_width = "match_parent"
-        android:layout_height = "wrap_content"
-        android:layout_below = "@id/editTextLastName"
-        android:layout_marginStart = "20dp"
-        android:layout_marginTop = "15dp"
-        android:layout_marginEnd = "20dp"
-        android:layout_marginBottom = "15dp"
-        android:background = "#30ffffff"
-        android:hint = "Enter your password"
-        android:textColorHint = "@color/white"
-        android:textColor = "@color/white"
-        android:textSize = "30dp"
-        android:drawableLeft = "@drawable/baseline_shield_30"
-        android:drawablePadding = "20dp"/>
-
-    <CheckBox
-        android:id = "@+id/cbShowPassword"
-        android:layout_width = "match_parent"
-        android:layout_height = "wrap_content"
-        android:layout_below = "@id/editTextPassword"
-        android:text = "Show the password"
-        android:textSize = "20sp"
-        android:textColor = "@color/white"
-        android:layout_marginTop = "0dp"
-        android:layout_marginLeft = "20dp"
-        android:layout_marginRight = "20dp"
-        android:buttonTint = "@color/design_default_color_primary"/>
-
-    <EditText
-        android:id = "@+id/editTextConfirmPassword"
-        android:layout_width = "match_parent"
-        android:layout_height = "wrap_content"
-        android:layout_below = "@id/cbShowPassword"
-        android:layout_marginStart = "20dp"
-        android:layout_marginTop = "15dp"
-        android:layout_marginEnd = "20dp"
-        android:layout_marginBottom = "15dp"
-        android:background = "#30ffffff"
-        android:hint = "Confirm your password"
-        android:textColorHint = "@color/white"
-        android:textColor = "@color/white"
-        android:textSize = "30sp"
-        android:drawableLeft = "@drawable/baseline_shield_30"
-        android:drawablePadding = "20dp"/>
-
-    <CheckBox
-        android:id = "@+id/cbShowConfirmedPassword"
-        android:layout_width = "match_parent"
-        android:layout_height = "wrap_content"
-        android:layout_below = "@id/editTextConfirmPassword"
-        android:text = "Show the confirmed password"
-        android:textSize = "20sp"
-        android:textColor = "@color/white"
-        android:layout_marginTop = "0dp"
-        android:layout_marginLeft = "20dp"
-        android:layout_marginRight = "20dp"
-        android:buttonTint = "@color/design_default_color_primary"/>
-
-    <com.google.android.material.button.MaterialButton
-        android:id = "@+id/btnSignUp"
-        android:layout_width = "wrap_content"
-        android:layout_height = "wrap_content"
-        android:layout_below = "@id/cbShowConfirmedPassword"
-        android:backgroundTint = "@color/design_default_color_primary"
-        android:text = "Sign Up"
-        android:textColor = "@color/white"
-        android:textSize = "30dp"
-        android:layout_marginTop = "20dp"
-        android:layout_marginLeft = "130dp"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
 
+            <EditText
+                android:id = "@+id/editTextUsername"
+                android:layout_width = "match_parent"
+                android:layout_height = "wrap_content"
+                android:layout_marginStart = "20dp"
+                android:layout_marginTop = "35dp"
+                android:layout_marginEnd = "20dp"
+                android:layout_marginBottom = "15dp"
+                android:background = "#30ffffff"
+                android:hint = "Enter your username"
+                android:textColorHint = "@color/white"
+                android:textColor = "@color/white"
+                android:textSize = "30dp"
+                android:drawableLeft = "@drawable/baseline_person_30"
+                android:drawablePadding = "20dp"/>
+
+            <EditText
+                android:id = "@+id/editTextEmail"
+                android:layout_width = "match_parent"
+                android:layout_height = "wrap_content"
+                android:layout_below = "@id/editTextUsername"
+                android:layout_marginStart = "20dp"
+                android:layout_marginTop = "15dp"
+                android:layout_marginEnd = "20dp"
+                android:layout_marginBottom = "15dp"
+                android:background = "#30ffffff"
+                android:hint = "Enter your email"
+                android:textColorHint = "@color/white"
+                android:textColor = "@color/white"
+                android:textSize = "30dp"
+                android:drawableLeft = "@drawable/baseline_alternate_email_30"
+                android:drawablePadding = "20dp"/>
+
+            <EditText
+                android:id = "@+id/editTextFirstName"
+                android:layout_width = "match_parent"
+                android:layout_height = "wrap_content"
+                android:layout_below = "@id/editTextEmail"
+                android:layout_marginStart = "20dp"
+                android:layout_marginTop = "15dp"
+                android:layout_marginEnd = "20dp"
+                android:layout_marginBottom = "15dp"
+                android:background = "#30ffffff"
+                android:hint = "Enter your first name"
+                android:textColorHint = "@color/white"
+                android:textColor = "@color/white"
+                android:textSize = "30dp"
+                android:drawableLeft = "@drawable/baseline_face_30"
+                android:drawablePadding = "20dp"/>
+
+            <EditText
+                android:id = "@+id/editTextLastName"
+                android:layout_width = "match_parent"
+                android:layout_height = "wrap_content"
+                android:layout_below = "@id/editTextFirstName"
+                android:layout_marginStart = "20dp"
+                android:layout_marginTop = "15dp"
+                android:layout_marginEnd = "20dp"
+                android:layout_marginBottom = "15dp"
+                android:background = "#30ffffff"
+                android:hint = "Enter your last name"
+                android:textColorHint = "@color/white"
+                android:textColor = "@color/white"
+                android:textSize = "30dp"
+                android:drawableLeft = "@drawable/baseline_face_30"
+                android:drawablePadding = "20dp"/>
+
+            <EditText
+                android:id = "@+id/editTextPassword"
+                android:layout_width = "match_parent"
+                android:layout_height = "wrap_content"
+                android:layout_below = "@id/editTextLastName"
+                android:layout_marginStart = "20dp"
+                android:layout_marginTop = "15dp"
+                android:layout_marginEnd = "20dp"
+                android:layout_marginBottom = "15dp"
+                android:background = "#30ffffff"
+                android:hint = "Enter your password"
+                android:textColorHint = "@color/white"
+                android:textColor = "@color/white"
+                android:textSize = "30dp"
+                android:drawableLeft = "@drawable/baseline_shield_30"
+                android:drawablePadding = "20dp"/>
+
+            <CheckBox
+                android:id = "@+id/cbShowPassword"
+                android:layout_width = "match_parent"
+                android:layout_height = "wrap_content"
+                android:layout_below = "@id/editTextPassword"
+                android:text = "Show the password"
+                android:textSize = "20sp"
+                android:textColor = "@color/white"
+                android:layout_marginTop = "0dp"
+                android:layout_marginLeft = "20dp"
+                android:layout_marginRight = "20dp"
+                android:buttonTint = "@color/design_default_color_primary"/>
+
+            <EditText
+                android:id = "@+id/editTextConfirmPassword"
+                android:layout_width = "match_parent"
+                android:layout_height = "wrap_content"
+                android:layout_below = "@id/cbShowPassword"
+                android:layout_marginStart = "20dp"
+                android:layout_marginTop = "15dp"
+                android:layout_marginEnd = "20dp"
+                android:layout_marginBottom = "15dp"
+                android:background = "#30ffffff"
+                android:hint = "Confirm your password"
+                android:textColorHint = "@color/white"
+                android:textColor = "@color/white"
+                android:textSize = "30sp"
+                android:drawableLeft = "@drawable/baseline_shield_30"
+                android:drawablePadding = "20dp"/>
+
+            <CheckBox
+                android:id = "@+id/cbShowConfirmedPassword"
+                android:layout_width = "match_parent"
+                android:layout_height = "wrap_content"
+                android:layout_below = "@id/editTextConfirmPassword"
+                android:text = "Show the confirmed password"
+                android:textSize = "20sp"
+                android:textColor = "@color/white"
+                android:layout_marginTop = "0dp"
+                android:layout_marginLeft = "20dp"
+                android:layout_marginRight = "20dp"
+                android:buttonTint = "@color/design_default_color_primary"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id = "@+id/btnSignUp"
+                android:layout_width = "wrap_content"
+                android:layout_height = "wrap_content"
+                android:layout_below = "@id/cbShowConfirmedPassword"
+                android:backgroundTint = "@color/design_default_color_primary"
+                android:text = "Sign Up"
+                android:textColor = "@color/white"
+                android:textSize = "30dp"
+                android:layout_marginTop = "20dp"
+                android:layout_marginLeft = "130dp"/>
+
+        </RelativeLayout>
+    </ScrollView>
 </RelativeLayout>
