@@ -64,22 +64,27 @@ public class StretchingExercisesActivity extends AppCompatActivity implements Na
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
         if(id == R.id.idMeditation) {
+            finish();
             Intent meditationIntent = new Intent(StretchingExercisesActivity.this, MeditationsActivity.class);
             startActivity(meditationIntent);
         }
         if(id == R.id.idMentalHealth) {
+            finish();
             Intent mentalHealthIntent = new Intent(StretchingExercisesActivity.this, MentalHealthInfoActivity.class);
             startActivity(mentalHealthIntent);
         }
         if(id == R.id.idHome) {
+            finish();
             Intent homeIntent = new Intent(StretchingExercisesActivity.this, HomeDashboardActivity.class);
             startActivity(homeIntent);
         }
         if(id == R.id.idThemes) {
+            finish();
             Intent themesIntent = new Intent(StretchingExercisesActivity.this, ThemesActivity.class);
             startActivity(themesIntent);
         }
         if(id == R.id.idPersonalAccount) {
+            finish();
             Intent personalAccountIntent = new Intent(StretchingExercisesActivity.this, PersonalAccountActivity.class);
             startActivity(personalAccountIntent);
         }

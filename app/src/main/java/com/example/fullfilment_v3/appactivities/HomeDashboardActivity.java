@@ -106,10 +106,12 @@ public class HomeDashboardActivity extends AppCompatActivity implements Navigati
 
         int id = item.getItemId();
         if(id == R.id.idThemes) {
+            finish();
             Intent themesIntent = new Intent(HomeDashboardActivity.this, ThemesActivity.class);
             startActivity(themesIntent);
         }
         if(id == R.id.idPersonalAccount) {
+            finish();
             Intent personalAccountIntent = new Intent(HomeDashboardActivity.this, PersonalAccountActivity.class);
             startActivity(personalAccountIntent);
         }

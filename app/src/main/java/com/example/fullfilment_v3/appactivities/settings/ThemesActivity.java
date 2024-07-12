@@ -102,22 +102,27 @@ public class ThemesActivity extends AppCompatActivity implements NavigationView.
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
         if(id == R.id.idMeditation) {
+            finish();
             Intent meditationIntent = new Intent(ThemesActivity.this, MeditationsActivity.class);
             startActivity(meditationIntent);
         }
         if(id == R.id.idExercises) {
+            finish();
             Intent stretchingIntent = new Intent(ThemesActivity.this, StretchingExercisesActivity.class);
             startActivity(stretchingIntent);
         }
         if(id == R.id.idMentalHealth) {
+            finish();
             Intent mentalHealthIntent = new Intent(ThemesActivity.this, MentalHealthInfoActivity.class);
             startActivity(mentalHealthIntent);
         }
         if(id == R.id.idHome) {
+            finish();
             Intent homeIntent = new Intent(ThemesActivity.this, HomeDashboardActivity.class);
             startActivity(homeIntent);
         }
         if(id == R.id.idPersonalAccount) {
+            finish();
             Intent personalAccountIntent = new Intent(ThemesActivity.this, PersonalAccountActivity.class);
             startActivity(personalAccountIntent);
         }

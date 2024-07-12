@@ -19,7 +19,16 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import com.example.fullfilment_v3.R;
 import com.example.fullfilment_v3.appactivities.HomeDashboardActivity;
 import com.example.fullfilment_v3.appactivities.meditations.MeditationsActivity;
+import com.example.fullfilment_v3.appactivities.mentalhealthinfo.articles.ADHDInfoActivity;
+import com.example.fullfilment_v3.appactivities.mentalhealthinfo.articles.AnxietyInfoActivity;
+import com.example.fullfilment_v3.appactivities.mentalhealthinfo.articles.BipolarDisorderInfoActivity;
+import com.example.fullfilment_v3.appactivities.mentalhealthinfo.articles.DepressionInfoActivity;
+import com.example.fullfilment_v3.appactivities.mentalhealthinfo.articles.FocusAndDisciplineInfoActivity;
+import com.example.fullfilment_v3.appactivities.mentalhealthinfo.articles.InsomniaInfoActivity;
+import com.example.fullfilment_v3.appactivities.mentalhealthinfo.articles.OCDInfoActivity;
 import com.example.fullfilment_v3.appactivities.mentalhealthinfo.articles.PTSDInfoActivity;
+import com.example.fullfilment_v3.appactivities.mentalhealthinfo.articles.SelfEsteemInfoActivity;
+import com.example.fullfilment_v3.appactivities.mentalhealthinfo.articles.SuicidalThoughtsInfoActivity;
 import com.example.fullfilment_v3.appactivities.personalinfo.PersonalAccountActivity;
 import com.example.fullfilment_v3.appactivities.settings.ThemesActivity;
 import com.example.fullfilment_v3.appactivities.stretchingexercises.StretchingExercisesActivity;
@@ -77,6 +86,51 @@ public class MentalHealthInfoActivity extends AppCompatActivity implements Navig
         navigationView.bringToFront();
         navigationView.setNavigationItemSelectedListener(this);
 
+        cardViewADHD.setOnClickListener(view -> {
+            Intent intent = new Intent(MentalHealthInfoActivity.this, ADHDInfoActivity.class);
+            startActivity(intent);
+        });
+
+        cardViewAnxiety.setOnClickListener(view -> {
+            Intent intent = new Intent(MentalHealthInfoActivity.this, AnxietyInfoActivity.class);
+            startActivity(intent);
+        });
+
+        cardViewBipolarDisorder.setOnClickListener(view -> {
+            Intent intent = new Intent(MentalHealthInfoActivity.this, BipolarDisorderInfoActivity.class);
+            startActivity(intent);
+        });
+
+        cardViewDepression.setOnClickListener(view -> {
+            Intent intent = new Intent(MentalHealthInfoActivity.this, DepressionInfoActivity.class);
+            startActivity(intent);
+        });
+
+        cardViewFocusAndDiscipline.setOnClickListener(view -> {
+            Intent intent = new Intent(MentalHealthInfoActivity.this, FocusAndDisciplineInfoActivity.class);
+            startActivity(intent);
+        });
+
+        cardViewInsomnia.setOnClickListener(view -> {
+            Intent intent = new Intent(MentalHealthInfoActivity.this, InsomniaInfoActivity.class);
+            startActivity(intent);
+        });
+
+        cardViewSelfEsteem.setOnClickListener(view -> {
+            Intent intent = new Intent(MentalHealthInfoActivity.this, SelfEsteemInfoActivity.class);
+            startActivity(intent);
+        });
+
+        cardViewSuicidalThoughts.setOnClickListener(view -> {
+            Intent intent = new Intent(MentalHealthInfoActivity.this, SuicidalThoughtsInfoActivity.class);
+            startActivity(intent);
+        });
+
+        cardViewOCD.setOnClickListener(view -> {
+            Intent intent = new Intent(MentalHealthInfoActivity.this, OCDInfoActivity.class);
+            startActivity(intent);
+        });
+
         cardViewPTSD.setOnClickListener(view -> {
             Intent intent = new Intent(MentalHealthInfoActivity.this, PTSDInfoActivity.class);
             startActivity(intent);
@@ -97,22 +151,27 @@ public class MentalHealthInfoActivity extends AppCompatActivity implements Navig
 
         int id = item.getItemId();
         if(id == R.id.idMeditation) {
+            finish();
             Intent meditationIntent = new Intent(MentalHealthInfoActivity.this, MeditationsActivity.class);
             startActivity(meditationIntent);
         }
         if(id == R.id.idExercises) {
+            finish();
             Intent exercisesIntent = new Intent(MentalHealthInfoActivity.this, StretchingExercisesActivity.class);
             startActivity(exercisesIntent);
         }
         if(id == R.id.idHome) {
+            finish();
             Intent homeIntent = new Intent(MentalHealthInfoActivity.this, HomeDashboardActivity.class);
             startActivity(homeIntent);
         }
         if(id == R.id.idThemes) {
+            finish();
             Intent themesIntent = new Intent(MentalHealthInfoActivity.this, ThemesActivity.class);
             startActivity(themesIntent);
         }
         if(id == R.id.idPersonalAccount) {
+            finish();
             Intent personalAccountIntent = new Intent(MentalHealthInfoActivity.this, PersonalAccountActivity.class);
             startActivity(personalAccountIntent);
         }

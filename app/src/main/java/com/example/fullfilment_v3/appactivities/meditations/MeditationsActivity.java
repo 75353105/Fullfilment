@@ -64,22 +64,27 @@ public class MeditationsActivity extends AppCompatActivity implements Navigation
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
         if(id == R.id.idMentalHealth) {
+            finish();
             Intent mentalHealthIntent = new Intent(MeditationsActivity.this, MentalHealthInfoActivity.class);
             startActivity(mentalHealthIntent);
         }
         if(id == R.id.idExercises) {
+            finish();
             Intent exercisesIntent = new Intent(MeditationsActivity.this, StretchingExercisesActivity.class);
             startActivity(exercisesIntent);
         }
         if(id == R.id.idHome) {
+            finish();
             Intent homeIntent = new Intent(MeditationsActivity.this, HomeDashboardActivity.class);
             startActivity(homeIntent);
         }
         if(id == R.id.idThemes) {
+            finish();
             Intent themesIntent = new Intent(MeditationsActivity.this, ThemesActivity.class);
             startActivity(themesIntent);
         }
         if(id == R.id.idPersonalAccount) {
+            finish();
             Intent personalAccountIntent = new Intent(MeditationsActivity.this, PersonalAccountActivity.class);
             startActivity(personalAccountIntent);
         }
