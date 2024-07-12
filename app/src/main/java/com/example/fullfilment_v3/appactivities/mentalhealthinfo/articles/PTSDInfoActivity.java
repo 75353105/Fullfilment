@@ -1,21 +1,24 @@
 package com.example.fullfilment_v3.appactivities.mentalhealthinfo.articles;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Html;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.fullfilment_v3.R;
+import com.example.fullfilment_v3.appactivities.mentalhealthinfo.MentalHealthInfoActivity;
 
 public class PTSDInfoActivity extends AppCompatActivity {
 
     RelativeLayout background;
     TextView textViewAboutPTSD;
-
+    ImageView backButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +27,7 @@ public class PTSDInfoActivity extends AppCompatActivity {
 
         background = findViewById(R.id.layout_PTSD);
         textViewAboutPTSD = findViewById(R.id.txtAboutPTSD);
+        backButton = findViewById(R.id.back_button_PTSD);
 
         String htmlText = "<p>Post-traumatic stress disorder (PTSD) is a mental health condition that's triggered by a terrifying event—either experiencing it or witnessing it. Symptoms may include flashbacks, nightmares and severe anxiety, as well as uncontrollable thoughts about the event.</p>"
                 + "<p>Most people who go through traumatic events may have temporary difficulty adjusting and coping, but with time and good self-care, they usually get better. If the symptoms get worse, last for months or even years, and interfere with your day-to-day functioning, you may have PTSD.</p>"
@@ -62,13 +66,18 @@ public class PTSDInfoActivity extends AppCompatActivity {
                 + "<p><b>When to see a doctor</b></p>"
                 + "<p>If you have disturbing thoughts and feelings about a traumatic event for more than a month, if they're severe, or if you feel you're having trouble getting your life back under control, talk to your doctor or a mental health professional. Getting treatment as soon as possible can help prevent PTSD symptoms from getting worse.</p>";
         textViewAboutPTSD.setText(Html.fromHtml(htmlText, Html.FROM_HTML_MODE_COMPACT));
+
+        backButton.setOnClickListener(view -> {
+            Intent backIntent = new Intent(PTSDInfoActivity.this, MentalHealthInfoActivity.class);
+            startActivity(backIntent);
+        });
     }
 
     @Override
     protected void onResume() {
         super.onResume();
         SharedPreferences settings = getSharedPreferences("Background", Context.MODE_PRIVATE);
-        int backgroundId = settings.getInt("background", R.drawable.fundal_mental_health);
+        int backgroundId = settings.getInt("background", R.drawable.fundal_welcome_gradient);
         background.setBackgroundResource(backgroundId);
     }
 }

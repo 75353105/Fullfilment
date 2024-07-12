@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/layout_Bipolar_Disorder"
+    android:background="@drawable/fundal_welcome_gradient"
+    tools:context=".appactivities.mentalhealthinfo.articles.ADHDInfoActivity">
+
+    <ImageView
+        android:id="@+id/back_button_Bipolar_Disorder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/baseline_arrow_back_24"
+        android:padding="16sp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"/>
+
+    <TextView
+        android:id = "@+id/txtTitleBipolarDisorder"
+        android:layout_width = "match_parent"
+        android:layout_height = "wrap_content"
+        android:layout_margin = "25dp"
+        android:layout_below="@id/back_button_Bipolar_Disorder"
+        android:text = "Bipolar Disorder"
+        android:textSize = "40sp"
+        android:textColor = "@color/white"
+        android:textAlignment = "center"/>
+
+    <ScrollView
+        android:id = "@+id/scrollViewBipolarDisorder"
+        android:layout_width = "match_parent"
+        android:layout_height = "match_parent"
+        android:layout_below = "@id/txtTitleBipolarDisorder">
+
+        <TextView
+            android:id = "@+id/txtAboutBipolarDisorder"
+            android:layout_width = "match_parent"
+            android:layout_height = "wrap_content"
+            android:textColor="@color/white"
+            android:padding = "20dp"/>
+
+    </ScrollView>
+
+</RelativeLayout>
