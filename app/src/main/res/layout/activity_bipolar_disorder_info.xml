@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:id="@+id/layout_Bipolar_Disorder"
     android:background="@drawable/fundal_welcome_gradient"
-    tools:context=".appactivities.mentalhealthinfo.articles.ADHDInfoActivity">
+    tools:context=".appactivities.mentalhealthinfo.articles.BipolarDisorderInfoActivity">
 
     <ImageView
         android:id="@+id/back_button_Bipolar_Disorder"
