@@ -92,5 +92,6 @@ public class StretchingExercisesActivity extends AppCompatActivity implements Na
         SharedPreferences settings = getSharedPreferences("Background", Context.MODE_PRIVATE);
         int backgroundId = settings.getInt("background", R.drawable.fundal_welcome_gradient);
         background.setBackgroundResource(backgroundId);
+        navigationView.setBackgroundResource(backgroundId);
     }
 }

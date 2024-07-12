@@ -125,5 +125,6 @@ public class MentalHealthInfoActivity extends AppCompatActivity implements Navig
         SharedPreferences settings = getSharedPreferences("Background", Context.MODE_PRIVATE);
         int backgroundId = settings.getInt("background", R.drawable.fundal_welcome_gradient);
         background.setBackgroundResource(backgroundId);
+        navigationView.setBackgroundResource(backgroundId);
     }
 }
