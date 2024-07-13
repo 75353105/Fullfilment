@@ -1,9 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_spiritual_meditation"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fundal_welcome_gradient"
     tools:context=".appactivities.meditations.meditationactivities.SpiritualMeditationActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:id="@+id/back_button_spiritual_meditation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/baseline_arrow_back_24"
+        android:padding="16sp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"/>
+
+    <TextView
+        android:id="@+id/txtSpiritualMeditation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin = "25dp"
+        android:layout_below="@id/back_button_spiritual_meditation"
+        android:text = "Spiritual meditation"
+        android:textSize = "40sp"
+        android:textColor = "@color/white"
+        android:textAlignment = "center"/>
+    <ScrollView
+        android:id="@+id/scrollViewSpiritualMeditation"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/txtSpiritualMeditation">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imgSpiritualMeditation"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:src="@drawable/spiritual_meditation" />
+
+            <TextView
+                android:id="@+id/txtExplanationSpiritualMeditation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/imgSpiritualMeditation"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="13sp" />
+
+            <GridLayout
+                android:id="@+id/gridLayoutSpiritualMeditation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtExplanationSpiritualMeditation"
+                android:layout_alignParentBottom="true"
+                android:rowCount="1"
+                android:columnCount="3">
+
+                <ImageView
+                    android:id="@+id/btnRestartSpiritualMeditation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="0"
+                    android:layout_column="0"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/baseline_refresh_24"
+                    android:padding="10sp"
+                    android:background="@color/indigo"/>
+
+                <ImageView
+                    android:id="@+id/btnPlaySpiritualMeditation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="0"
+                    android:layout_column="1"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/baseline_play_circle_outline_24"
+                    android:padding="10sp"
+                    android:background="@color/indigo"/>
+
+                <ImageView
+                    android:id="@+id/btnPauseSpiritualMeditation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="0"
+                    android:layout_column="2"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/baseline_pause_circle_outline_24"
+                    android:padding="10sp"
+                    android:background="@color/indigo"/>
+
+            </GridLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
