@@ -15,6 +15,42 @@
         android:theme="@style/Theme.Fullfilment_v3"
         tools:targetApi="31">
         <activity
+            android:name=".appactivities.stretchingexercises.exercises.SeatedSpinalTwistExerciseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".appactivities.stretchingexercises.exercises.RotationalNeckStretchExerciseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".appactivities.stretchingexercises.exercises.PuppyPoseExerciseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".appactivities.stretchingexercises.exercises.PigeonPoseExerciseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".appactivities.stretchingexercises.exercises.LyingGluteStretchExerciseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".appactivities.stretchingexercises.exercises.HipFlexorStretchExerciseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".appactivities.stretchingexercises.exercises.HappyBabyExerciseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".appactivities.stretchingexercises.exercises.ForwardFoldActivity"
+            android:exported="false" />
+        <activity
+            android:name=".appactivities.stretchingexercises.exercises.DownwardFacingDogExxerciseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".appactivities.stretchingexercises.exercises.ChestOpenerStretchActivity"
+            android:exported="false" />
+        <activity
+            android:name=".appactivities.stretchingexercises.exercises.ChildsPoseExerciseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".appactivities.stretchingexercises.exercises.CatCowExerciseActivity"
+            android:exported="false" />
+        <activity
             android:name=".appactivities.meditations.meditationactivities.LovingKindnessMeditationActivity"
             android:exported="false" />
         <activity
