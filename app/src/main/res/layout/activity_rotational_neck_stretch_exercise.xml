@@ -1,9 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_rotational_neck_stretch"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fundal_welcome_gradient"
     tools:context=".appactivities.stretchingexercises.exercises.RotationalNeckStretchExerciseActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:id="@+id/back_button_rotational_neck_stretch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/baseline_arrow_back_24"
+        android:padding="16sp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"/>
+
+    <TextView
+        android:id="@+id/txtRotationalNeckStretch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin = "25dp"
+        android:layout_below="@id/back_button_rotational_neck_stretch"
+        android:text = "Rotational neck stretch exercise"
+        android:textSize = "40sp"
+        android:textColor = "@color/white"
+        android:textAlignment = "center"/>
+    <ScrollView
+        android:id="@+id/scrollViewRotationalNeckStretch"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/txtRotationalNeckStretch">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imgRotationalOpenerStretch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/rotational_neck_stretch"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"/>
+
+            <TextView
+                android:id="@+id/txtExplanationRotationalNeckStretch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/imgRotationalOpenerStretch"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="13sp" />
+
+            <GridLayout
+                android:id="@+id/gridLayoutChestOpenerStretch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtExplanationRotationalNeckStretch"
+                android:layout_alignParentBottom="true"
+                android:rowCount="1"
+                android:columnCount="3">
+
+                <ImageView
+                    android:id="@+id/btnRestartRotationalNeckStretch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="0"
+                    android:layout_column="0"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/baseline_refresh_24"
+                    android:padding="10sp"
+                    android:background="@color/indigo"/>
+
+                <ImageView
+                    android:id="@+id/btnPlayRotationalNeckStretch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="0"
+                    android:layout_column="1"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/baseline_play_circle_outline_24"
+                    android:padding="10sp"
+                    android:background="@color/indigo"/>
+
+                <ImageView
+                    android:id="@+id/btnPauseRotationalneckStretch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="0"
+                    android:layout_column="2"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/baseline_pause_circle_outline_24"
+                    android:padding="10sp"
+                    android:background="@color/indigo"/>
+
+            </GridLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

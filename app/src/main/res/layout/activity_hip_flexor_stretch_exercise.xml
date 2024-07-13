@@ -1,9 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_hip_flexor_stretch"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fundal_welcome_gradient"
     tools:context=".appactivities.stretchingexercises.exercises.HipFlexorStretchExerciseActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:id="@+id/back_button_hip_flexor_stretch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/baseline_arrow_back_24"
+        android:padding="16sp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"/>
+
+    <TextView
+        android:id="@+id/txtHipFlexorExercise"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin = "25dp"
+        android:layout_below="@id/back_button_hip_flexor_stretch"
+        android:text = "Hip-flexor stretch exercise"
+        android:textSize = "40sp"
+        android:textColor = "@color/white"
+        android:textAlignment = "center"/>
+    <ScrollView
+        android:id="@+id/scrollViewHipFlexorStretch"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/txtHipFlexorExercise">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imgHipFlexorStretch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:src="@drawable/hip_flexor_stretch"/>
+
+            <TextView
+                android:id="@+id/txtExplanationHipFlexorStretch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/imgHipFlexorStretch"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="13sp" />
+
+            <GridLayout
+                android:id="@+id/gridLayoutHipFlexorStretch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtExplanationHipFlexorStretch"
+                android:layout_alignParentBottom="true"
+                android:rowCount="1"
+                android:columnCount="3">
+
+                <ImageView
+                    android:id="@+id/btnRestartHipFlexorStretrch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="0"
+                    android:layout_column="0"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/baseline_refresh_24"
+                    android:padding="10sp"
+                    android:background="@color/indigo"/>
+
+                <ImageView
+                    android:id="@+id/btnPlayHipFlexorStretch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="0"
+                    android:layout_column="1"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/baseline_play_circle_outline_24"
+                    android:padding="10sp"
+                    android:background="@color/indigo"/>
+
+                <ImageView
+                    android:id="@+id/btnPauseHipFlexorStretch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="0"
+                    android:layout_column="2"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/baseline_pause_circle_outline_24"
+                    android:padding="10sp"
+                    android:background="@color/indigo"/>
+
+            </GridLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
