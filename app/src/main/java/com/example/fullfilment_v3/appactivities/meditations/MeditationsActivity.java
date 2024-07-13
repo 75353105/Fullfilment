@@ -10,11 +10,20 @@ import android.widget.RelativeLayout;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.example.fullfilment_v3.R;
 import com.example.fullfilment_v3.appactivities.HomeDashboardActivity;
+import com.example.fullfilment_v3.appactivities.meditations.meditationactivities.FocusMeditationActivity;
+import com.example.fullfilment_v3.appactivities.meditations.meditationactivities.LovingKindnessMeditationActivity;
+import com.example.fullfilment_v3.appactivities.meditations.meditationactivities.MantraMeditationActivity;
+import com.example.fullfilment_v3.appactivities.meditations.meditationactivities.MindfulnessMeditationActivity;
+import com.example.fullfilment_v3.appactivities.meditations.meditationactivities.MovementMeditationActivity;
+import com.example.fullfilment_v3.appactivities.meditations.meditationactivities.RelaxationMeditationActivity;
+import com.example.fullfilment_v3.appactivities.meditations.meditationactivities.SpiritualMeditationActivity;
+import com.example.fullfilment_v3.appactivities.meditations.meditationactivities.VisualizationMeditationActivity;
 import com.example.fullfilment_v3.appactivities.mentalhealthinfo.MentalHealthInfoActivity;
 import com.example.fullfilment_v3.appactivities.personalinfo.PersonalAccountActivity;
 import com.example.fullfilment_v3.appactivities.settings.ThemesActivity;
@@ -27,6 +36,14 @@ public class MeditationsActivity extends AppCompatActivity implements Navigation
     DrawerLayout drawer;
     ImageView imageView;
     NavigationView navigationView;
+    CardView cardViewMindfulness;
+    CardView cardViewSpiritual;
+    CardView cardViewFocus;
+    CardView cardViewMovement;
+    CardView cardViewMantra;
+    CardView cardViewRelaxation;
+    CardView cardViewLovingKindness;
+    CardView cardViewVisualization;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +54,14 @@ public class MeditationsActivity extends AppCompatActivity implements Navigation
         drawer = findViewById(R.id.drawer_layout_meditations);
         imageView = findViewById(R.id.img_navMED);
         navigationView = findViewById(R.id.idNavView2);
+        cardViewMindfulness = findViewById(R.id.cardViewMindfulnessMeditation);
+        cardViewSpiritual = findViewById(R.id.cardViewSpiritualMeditation);
+        cardViewFocus = findViewById(R.id.cardViewFocusedMeditation);
+        cardViewMantra = findViewById(R.id.cardViewMantraMeditation);
+        cardViewMovement = findViewById(R.id.cardViewMovementMeditation);
+        cardViewRelaxation = findViewById(R.id.cardViewProgressiveRelaxation);
+        cardViewLovingKindness = findViewById(R.id.cardViewLovingKindness);
+        cardViewVisualization = findViewById(R.id.cardViewVisualizationMeditation);
 
         drawer.closeDrawer(GravityCompat.START);
         imageView.setOnClickListener(view -> {
@@ -49,6 +74,46 @@ public class MeditationsActivity extends AppCompatActivity implements Navigation
 
         navigationView.bringToFront();
         navigationView.setNavigationItemSelectedListener(this);
+
+        cardViewMindfulness.setOnClickListener(view -> {
+            Intent intent = new Intent(MeditationsActivity.this, MindfulnessMeditationActivity.class);
+            startActivity(intent);
+        });
+
+        cardViewSpiritual.setOnClickListener(view -> {
+            Intent intent = new Intent(MeditationsActivity.this, SpiritualMeditationActivity.class);
+            startActivity(intent);
+        });
+
+        cardViewFocus.setOnClickListener(view -> {
+            Intent intent = new Intent(MeditationsActivity.this, FocusMeditationActivity.class);
+            startActivity(intent);
+        });
+
+        cardViewMovement.setOnClickListener(view -> {
+            Intent intent = new Intent(MeditationsActivity.this, MovementMeditationActivity.class);
+            startActivity(intent);
+        });
+
+        cardViewMantra.setOnClickListener(view -> {
+            Intent intent = new Intent(MeditationsActivity.this, MantraMeditationActivity.class);
+            startActivity(intent);
+        });
+
+        cardViewRelaxation.setOnClickListener(view -> {
+            Intent intent = new Intent(MeditationsActivity.this, RelaxationMeditationActivity.class);
+            startActivity(intent);
+        });
+
+        cardViewLovingKindness.setOnClickListener(view -> {
+            Intent intent = new Intent(MeditationsActivity.this, LovingKindnessMeditationActivity.class);
+            startActivity(intent);
+        });
+
+        cardViewVisualization.setOnClickListener(view -> {
+            Intent intent = new Intent(MeditationsActivity.this, VisualizationMeditationActivity.class);
+            startActivity(intent);
+        });
     }
 
     @Override
