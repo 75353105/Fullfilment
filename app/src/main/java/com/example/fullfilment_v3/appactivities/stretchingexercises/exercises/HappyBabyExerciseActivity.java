@@ -3,6 +3,7 @@ package com.example.fullfilment_v3.appactivities.stretchingexercises.exercises;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.text.Html;
 import android.widget.ImageView;
@@ -16,6 +17,7 @@ import com.example.fullfilment_v3.appactivities.stretchingexercises.StretchingEx
 
 public class HappyBabyExerciseActivity extends AppCompatActivity {
 
+    MediaPlayer mediaPlayer;
     RelativeLayout background;
     TextView textAboutHappyBaby;
     ImageView backButton;
@@ -48,16 +50,23 @@ public class HappyBabyExerciseActivity extends AppCompatActivity {
             startActivity(backIntent);
         });
 
-        playButton.setOnClickListener(view ->{
+        mediaPlayer = MediaPlayer.create(this, R.raw.happy_baby_audio);
 
+        playButton.setOnClickListener(view ->{
+            if(!mediaPlayer.isPlaying()) {
+                mediaPlayer.start();
+            }
         });
 
         pauseButton.setOnClickListener(view ->{
-
+            if(mediaPlayer.isPlaying()) {
+                mediaPlayer.pause();
+            }
         });
 
         restartButton.setOnClickListener(view -> {
-
+            mediaPlayer.seekTo(0);
+            mediaPlayer.start();
         });
 
     }
@@ -67,5 +76,14 @@ public class HappyBabyExerciseActivity extends AppCompatActivity {
         SharedPreferences settings = getSharedPreferences("Background", Context.MODE_PRIVATE);
         int backgroundId = settings.getInt("background", R.drawable.fundal_welcome_gradient);
         background.setBackgroundResource(backgroundId);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if(mediaPlayer != null) {
+            mediaPlayer.release();
+            mediaPlayer = null;
+        }
     }
 }
