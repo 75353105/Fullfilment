@@ -3,6 +3,7 @@ package com.example.fullfilment_v3.appactivities.meditations.meditationactivitie
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.text.Html;
 import android.widget.ImageView;
@@ -16,12 +17,13 @@ import com.example.fullfilment_v3.appactivities.meditations.MeditationsActivity;
 
 public class FocusMeditationActivity extends AppCompatActivity {
 
-    RelativeLayout background;
+    MediaPlayer mediaPlayer;
     TextView textAboutFocusMeditation;
     ImageView backButton;
     ImageView playButton;
     ImageView pauseButton;
     ImageView restartButton;
+    RelativeLayout background;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,16 +64,23 @@ public class FocusMeditationActivity extends AppCompatActivity {
             startActivity(backIntent);
         });
 
-        playButton.setOnClickListener(view ->{
+        mediaPlayer = MediaPlayer.create(this, R.raw.focus_meditation_audio);
 
+        playButton.setOnClickListener(view ->{
+            if(!mediaPlayer.isPlaying()) {
+                mediaPlayer.start();
+            }
         });
 
         pauseButton.setOnClickListener(view ->{
-
+            if(mediaPlayer.isPlaying()) {
+                mediaPlayer.pause();
+            }
         });
 
         restartButton.setOnClickListener(view -> {
-
+            mediaPlayer.seekTo(0);
+            mediaPlayer.start();
         });
     }
 
@@ -82,4 +91,12 @@ public class FocusMeditationActivity extends AppCompatActivity {
         background.setBackgroundResource(backgroundId);
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if(mediaPlayer != null) {
+            mediaPlayer.release();
+            mediaPlayer = null;
+        }
+    }
 }

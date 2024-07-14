@@ -3,6 +3,7 @@ package com.example.fullfilment_v3.appactivities.meditations.meditationactivitie
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.text.Html;
 import android.widget.ImageView;
@@ -15,7 +16,7 @@ import com.example.fullfilment_v3.R;
 import com.example.fullfilment_v3.appactivities.meditations.MeditationsActivity;
 
 public class MantraMeditationActivity extends AppCompatActivity {
-
+    MediaPlayer mediaPlayer;
     RelativeLayout background;
     TextView textAboutMantraMeditation;
     ImageView backButton;
@@ -50,16 +51,23 @@ public class MantraMeditationActivity extends AppCompatActivity {
             startActivity(backIntent);
         });
 
-        playButton.setOnClickListener(view ->{
+        mediaPlayer = MediaPlayer.create(this, R.raw.mantra_meditation_audio);
 
+        playButton.setOnClickListener(view ->{
+            if(!mediaPlayer.isPlaying()) {
+                mediaPlayer.start();
+            }
         });
 
         pauseButton.setOnClickListener(view ->{
-
+            if(mediaPlayer.isPlaying()) {
+                mediaPlayer.pause();
+            }
         });
 
         restartButton.setOnClickListener(view -> {
-
+            mediaPlayer.seekTo(0);
+            mediaPlayer.start();
         });
     }
 
@@ -68,5 +76,14 @@ public class MantraMeditationActivity extends AppCompatActivity {
         SharedPreferences settings = getSharedPreferences("Background", Context.MODE_PRIVATE);
         int backgroundId = settings.getInt("background", R.drawable.fundal_welcome_gradient);
         background.setBackgroundResource(backgroundId);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if(mediaPlayer != null) {
+            mediaPlayer.release();
+            mediaPlayer = null;
+        }
     }
 }
