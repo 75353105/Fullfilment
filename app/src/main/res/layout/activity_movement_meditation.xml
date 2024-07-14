@@ -9,7 +9,7 @@
     tools:context=".appactivities.meditations.meditationactivities.MovementMeditationActivity">
 
     <ImageView
-        android:id="@+id/back_button_relaxation_meditation"
+        android:id="@+id/back_button_movement_meditation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/baseline_arrow_back_24"
@@ -18,39 +18,39 @@
         android:layout_alignParentStart="true"/>
 
     <TextView
-        android:id="@+id/txtRelaxationMeditation"
+        android:id="@+id/txtMovementMeditation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin = "25dp"
-        android:layout_below="@id/back_button_relaxation_meditation"
+        android:layout_below="@id/back_button_movement_meditation"
         android:text = "Movement meditation"
         android:textSize = "40sp"
         android:textColor = "@color/white"
         android:textAlignment = "center"/>
     <ScrollView
-        android:id="@+id/scrollViewRelaxationMeditation"
+        android:id="@+id/scrollViewMovementMeditation"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/txtRelaxationMeditation">
+        android:layout_below="@id/txtMovementMeditation">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/imgRelaxationMeditation"
+                android:id="@+id/imgMovementMeditation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_centerHorizontal="true"
-                android:src="@drawable/progressive_relaxation" />
+                android:src="@drawable/movement_meditation" />
 
             <TextView
-                android:id="@+id/txtExplanationRelaxationMeditation"
+                android:id="@+id/txtExplanationMovementMeditation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/imgRelaxationMeditation"
+                android:layout_below="@id/imgMovementMeditation"
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
                 android:textAlignment="center"
@@ -58,16 +58,16 @@
                 android:textSize="13sp" />
 
             <GridLayout
-                android:id="@+id/gridLayoutRelaxationMeditation"
+                android:id="@+id/gridLayoutMovementMeditation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/txtExplanationRelaxationMeditation"
+                android:layout_below="@id/txtExplanationMovementMeditation"
                 android:layout_alignParentBottom="true"
                 android:rowCount="1"
                 android:columnCount="3">
 
                 <ImageView
-                    android:id="@+id/btnRestartRelaxationMeditation"
+                    android:id="@+id/btnRestartMovementMeditation"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_row="0"
@@ -79,7 +79,7 @@
                     android:background="@color/indigo"/>
 
                 <ImageView
-                    android:id="@+id/btnPlayRelaxationMeditation"
+                    android:id="@+id/btnPlayMovementMeditation"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_row="0"
@@ -91,7 +91,7 @@
                     android:background="@color/indigo"/>
 
                 <ImageView
-                    android:id="@+id/btnPauseRelaxationMeditation"
+                    android:id="@+id/btnPauseMovementMeditation"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_row="0"

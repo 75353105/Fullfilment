@@ -39,7 +39,7 @@
             android:name=".appactivities.stretchingexercises.exercises.ForwardFoldActivity"
             android:exported="false" />
         <activity
-            android:name=".appactivities.stretchingexercises.exercises.DownwardFacingDogExxerciseActivity"
+            android:name=".appactivities.stretchingexercises.exercises.DownwardFacingDogExerciseActivity"
             android:exported="false" />
         <activity
             android:name=".appactivities.stretchingexercises.exercises.ChestOpenerStretchActivity"

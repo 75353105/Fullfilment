@@ -93,6 +93,7 @@ public class AnxietyInfoActivity extends AppCompatActivity {
         textAboutAnxiety.setText(Html.fromHtml(AnxietyText, Html.FROM_HTML_MODE_COMPACT));
 
         backButton.setOnClickListener(view -> {
+            finish();
             Intent backIntent = new Intent(AnxietyInfoActivity.this, MentalHealthInfoActivity.class);
             startActivity(backIntent);
         });

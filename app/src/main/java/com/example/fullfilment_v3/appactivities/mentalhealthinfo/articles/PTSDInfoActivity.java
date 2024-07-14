@@ -68,9 +68,12 @@ public class PTSDInfoActivity extends AppCompatActivity {
         textViewAboutPTSD.setText(Html.fromHtml(htmlText, Html.FROM_HTML_MODE_COMPACT));
 
         backButton.setOnClickListener(view -> {
+            finish();
             Intent backIntent = new Intent(PTSDInfoActivity.this, MentalHealthInfoActivity.class);
             startActivity(backIntent);
         });
+
+
     }
 
     @Override

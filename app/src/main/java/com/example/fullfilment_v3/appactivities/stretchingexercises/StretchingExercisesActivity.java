@@ -22,7 +22,7 @@ import com.example.fullfilment_v3.appactivities.personalinfo.PersonalAccountActi
 import com.example.fullfilment_v3.appactivities.settings.ThemesActivity;
 import com.example.fullfilment_v3.appactivities.stretchingexercises.exercises.CatCowExerciseActivity;
 import com.example.fullfilment_v3.appactivities.stretchingexercises.exercises.ChestOpenerStretchActivity;
-import com.example.fullfilment_v3.appactivities.stretchingexercises.exercises.DownwardFacingDogExxerciseActivity;
+import com.example.fullfilment_v3.appactivities.stretchingexercises.exercises.DownwardFacingDogExerciseActivity;
 import com.example.fullfilment_v3.appactivities.stretchingexercises.exercises.ForwardFoldActivity;
 import com.example.fullfilment_v3.appactivities.stretchingexercises.exercises.HappyBabyExerciseActivity;
 import com.example.fullfilment_v3.appactivities.stretchingexercises.exercises.HipFlexorStretchExerciseActivity;
@@ -90,7 +90,7 @@ public class StretchingExercisesActivity extends AppCompatActivity implements Na
         });
 
         cardViewDowanwardFacingDog.setOnClickListener(view -> {
-            Intent intent = new Intent(StretchingExercisesActivity.this, DownwardFacingDogExxerciseActivity.class);
+            Intent intent = new Intent(StretchingExercisesActivity.this, DownwardFacingDogExerciseActivity.class);
             startActivity(intent);
         });
         cardViewForwardFold.setOnClickListener(view -> {

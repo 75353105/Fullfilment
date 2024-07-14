@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fundal_welcome_gradient"
-    tools:context=".appactivities.stretchingexercises.exercises.DownwardFacingDogExxerciseActivity">
+    tools:context=".appactivities.stretchingexercises.exercises.DownwardFacingDogExerciseActivity">
 
     <ImageView
         android:id="@+id/back_button_downward_facing_dog"

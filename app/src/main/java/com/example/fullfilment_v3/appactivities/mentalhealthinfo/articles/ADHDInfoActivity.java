@@ -102,6 +102,7 @@ public class ADHDInfoActivity extends AppCompatActivity {
         textAboutADHD.setText(Html.fromHtml(ADHDText, Html.FROM_HTML_MODE_COMPACT));
 
         backButton.setOnClickListener(view -> {
+            finish();
             Intent backIntent = new Intent(ADHDInfoActivity.this, MentalHealthInfoActivity.class);
             startActivity(backIntent);
         });
