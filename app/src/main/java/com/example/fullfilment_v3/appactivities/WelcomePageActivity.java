@@ -18,7 +18,6 @@ public class WelcomePageActivity extends AppCompatActivity {
     RelativeLayout background;
     Button btnStartApplication;
     Button btnSignOut;
-    long userId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -23,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/layout_mental_health"
-        android:background="@drawable/fundal_mental_health">
+        android:background="@drawable/fundal_welcome_gradient">
 
         <ImageView
             android:id="@+id/img_navMH"
@@ -374,7 +374,7 @@
             android:gravity="center"
             android:layout_marginTop="50dp"
             android:text="@string/linkToBetterHelp"
-            android:textColor="@color/white"
+            android:textColorLink="@color/white"
             android:textSize="18sp"
             android:linksClickable="true"/>
 
